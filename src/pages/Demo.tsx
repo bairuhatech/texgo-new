@@ -86,8 +86,56 @@ const Demo: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-indigo-900 dark:to-purple-900">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div className="min-h-screen bg-gradient-to-br from-blue-100 via-indigo-100 to-purple-100 dark:from-gray-900 dark:via-indigo-900 dark:to-purple-900 relative overflow-hidden">
+      {/* Subtle Background Animation */}
+      <div className="absolute inset-0">
+        {/* Floating Elements */}
+        {[...Array(12)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute opacity-10 dark:opacity-20"
+            initial={{ 
+              x: Math.random() * window.innerWidth,
+              y: Math.random() * window.innerHeight,
+              rotate: 0,
+              scale: 0.5
+            }}
+            animate={{ 
+              y: [0, -30, 0],
+              rotate: 360,
+              scale: [0.5, 1, 0.5],
+              opacity: [0.05, 0.15, 0.05]
+            }}
+            transition={{
+              duration: 20 + i * 2,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+          >
+            <Calendar className="w-8 h-8 text-blue-500 dark:text-blue-400" />
+          </motion.div>
+        ))}
+        
+        {/* Gradient Overlay */}
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-r from-blue-200/10 via-indigo-200/10 to-purple-200/10 dark:from-blue-800/10 dark:via-indigo-800/10 dark:to-purple-800/10"
+          animate={{
+            background: [
+              "linear-gradient(90deg, rgba(59, 130, 246, 0.05), rgba(99, 102, 241, 0.05), rgba(147, 51, 234, 0.05))",
+              "linear-gradient(180deg, rgba(147, 51, 234, 0.05), rgba(59, 130, 246, 0.05), rgba(99, 102, 241, 0.05))",
+              "linear-gradient(270deg, rgba(99, 102, 241, 0.05), rgba(147, 51, 234, 0.05), rgba(59, 130, 246, 0.05))",
+              "linear-gradient(360deg, rgba(59, 130, 246, 0.05), rgba(99, 102, 241, 0.05), rgba(147, 51, 234, 0.05))"
+            ]
+          }}
+          transition={{ duration: 15, repeat: Infinity }}
+        />
+      </div>
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
         {/* Back Button */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}

@@ -25,12 +25,12 @@ const Hero: React.FC = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-600 via-indigo-700 to-purple-800 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-700 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900">
       {/* Animated Background Pattern */}
       <div className="absolute inset-0">
         {/* Animated Gradient Overlay */}
         <motion.div 
-          className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-indigo-500/20 to-purple-500/20"
+          className="absolute inset-0 bg-gradient-to-r from-blue-400/25 via-indigo-400/25 to-purple-400/25"
           animate={{
             background: [
               "linear-gradient(45deg, rgba(59, 130, 246, 0.2), rgba(99, 102, 241, 0.2), rgba(147, 51, 234, 0.2))",
@@ -124,7 +124,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="text-lg md:text-xl text-white/80 mb-4 font-medium"
+            className="text-lg md:text-xl text-white mb-4 font-medium text-shadow"
           >
             {translations.hero.preHeadline}
           </motion.p>
@@ -136,7 +136,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
           >
-            <span className="text-white">Revolutionize Your</span>
+            <span className="text-white text-shadow">Revolutionize Your</span>
             <br />
             <motion.span
               key={currentText}
@@ -155,7 +155,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
-            className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto leading-relaxed text-shadow"
           >
             {translations.hero.subtitle}
           </motion.p>
@@ -197,7 +197,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2 }}
-            className="flex flex-wrap justify-center items-center gap-8 text-white/70"
+            className="flex flex-wrap justify-center items-center gap-8 text-white text-shadow"
           >
             <div className="flex items-center space-x-2">
               <div className="w-3 h-3 bg-success-green rounded-full animate-pulse"></div>
