@@ -25,18 +25,18 @@ const Hero: React.FC = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-700 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-100 via-indigo-100 to-purple-100 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900">
       {/* Animated Background Pattern */}
       <div className="absolute inset-0">
         {/* Animated Gradient Overlay */}
         <motion.div 
-          className="absolute inset-0 bg-gradient-to-r from-blue-400/25 via-indigo-400/25 to-purple-400/25"
+          className="absolute inset-0 bg-gradient-to-r from-primary-yellow/10 via-success-green/10 to-blue-200/10"
           animate={{
             background: [
-              "linear-gradient(45deg, rgba(59, 130, 246, 0.2), rgba(99, 102, 241, 0.2), rgba(147, 51, 234, 0.2))",
-              "linear-gradient(135deg, rgba(147, 51, 234, 0.2), rgba(59, 130, 246, 0.2), rgba(99, 102, 241, 0.2))",
-              "linear-gradient(225deg, rgba(99, 102, 241, 0.2), rgba(147, 51, 234, 0.2), rgba(59, 130, 246, 0.2))",
-              "linear-gradient(315deg, rgba(59, 130, 246, 0.2), rgba(99, 102, 241, 0.2), rgba(147, 51, 234, 0.2))"
+              "linear-gradient(45deg, rgba(255, 188, 73, 0.08), rgba(53, 181, 41, 0.08), rgba(59, 130, 246, 0.08))",
+              "linear-gradient(135deg, rgba(53, 181, 41, 0.08), rgba(59, 130, 246, 0.08), rgba(255, 188, 73, 0.08))",
+              "linear-gradient(225deg, rgba(59, 130, 246, 0.08), rgba(255, 188, 73, 0.08), rgba(53, 181, 41, 0.08))",
+              "linear-gradient(315deg, rgba(255, 188, 73, 0.08), rgba(53, 181, 41, 0.08), rgba(59, 130, 246, 0.08))"
             ]
           }}
           transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
@@ -46,7 +46,11 @@ const Hero: React.FC = () => {
         {[...Array(50)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-white rounded-full"
+            className={`absolute w-1 h-1 rounded-full ${
+              i % 3 === 0 ? 'bg-primary-yellow' : 
+              i % 3 === 1 ? 'bg-success-green' : 
+              'bg-blue-400'
+            }`}
             initial={{ 
               opacity: 0,
               x: Math.random() * window.innerWidth,
@@ -70,7 +74,9 @@ const Hero: React.FC = () => {
         {[...Array(8)].map((_, i) => (
           <motion.div
             key={`shape-${i}`}
-            className="absolute border border-white/20 rounded-full"
+            className={`absolute border rounded-full ${
+              i % 2 === 0 ? 'border-primary-yellow/30' : 'border-success-green/30'
+            }`}
             style={{
               width: `${100 + i * 50}px`,
               height: `${100 + i * 50}px`,
@@ -124,7 +130,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="text-lg md:text-xl text-white mb-4 font-medium text-shadow"
+            className="text-lg md:text-xl text-deep-black dark:text-white mb-4 font-medium"
           >
             {translations.hero.preHeadline}
           </motion.p>
@@ -136,7 +142,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
           >
-            <span className="text-white text-shadow">Revolutionize Your</span>
+            <span className="text-deep-black dark:text-white">Revolutionize Your</span>
             <br />
             <motion.span
               key={currentText}
@@ -155,7 +161,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
-            className="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto leading-relaxed text-shadow"
+            className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
           >
             {translations.hero.subtitle}
           </motion.p>
@@ -185,7 +191,7 @@ const Hero: React.FC = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold text-lg rounded-full hover:bg-white hover:text-gray-900 transition-all duration-300"
+                className="px-8 py-4 bg-transparent border-2 border-deep-black dark:border-white text-deep-black dark:text-white font-bold text-lg rounded-full hover:bg-deep-black hover:text-white dark:hover:bg-white dark:hover:text-deep-black transition-all duration-300"
               >
                 {translations.hero.ctaSecondary}
               </motion.button>
@@ -197,7 +203,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2 }}
-            className="flex flex-wrap justify-center items-center gap-8 text-white text-shadow"
+            className="flex flex-wrap justify-center items-center gap-8 text-gray-600 dark:text-gray-400"
           >
             <div className="flex items-center space-x-2">
               <div className="w-3 h-3 bg-success-green rounded-full animate-pulse"></div>
@@ -225,12 +231,12 @@ const Hero: React.FC = () => {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center"
+          className="w-6 h-10 border-2 border-gray-600 dark:border-gray-400 rounded-full flex justify-center"
         >
           <motion.div
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="w-1 h-3 bg-gray-400 rounded-full mt-2"
+            className="w-1 h-3 bg-gray-600 dark:bg-gray-400 rounded-full mt-2"
           />
         </motion.div>
       </motion.div>
