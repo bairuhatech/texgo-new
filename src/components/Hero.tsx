@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight, Brain, Zap, Globe, TrendingUp } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useApp } from '../contexts/AppContext';
 import { FloatingElement } from './ScrollAnimations';
 
@@ -24,18 +25,18 @@ const Hero: React.FC = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-600 via-indigo-700 to-purple-800 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900">
       {/* Animated Background Pattern */}
       <div className="absolute inset-0">
         {/* Animated Gradient Overlay */}
         <motion.div 
-          className="absolute inset-0 bg-gradient-to-r from-blue-600/30 via-purple-600/30 to-pink-600/30"
+          className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-indigo-500/20 to-purple-500/20"
           animate={{
             background: [
-              "linear-gradient(45deg, rgba(59, 130, 246, 0.3), rgba(147, 51, 234, 0.3), rgba(236, 72, 153, 0.3))",
-              "linear-gradient(135deg, rgba(236, 72, 153, 0.3), rgba(59, 130, 246, 0.3), rgba(147, 51, 234, 0.3))",
-              "linear-gradient(225deg, rgba(147, 51, 234, 0.3), rgba(236, 72, 153, 0.3), rgba(59, 130, 246, 0.3))",
-              "linear-gradient(315deg, rgba(59, 130, 246, 0.3), rgba(147, 51, 234, 0.3), rgba(236, 72, 153, 0.3))"
+              "linear-gradient(45deg, rgba(59, 130, 246, 0.2), rgba(99, 102, 241, 0.2), rgba(147, 51, 234, 0.2))",
+              "linear-gradient(135deg, rgba(147, 51, 234, 0.2), rgba(59, 130, 246, 0.2), rgba(99, 102, 241, 0.2))",
+              "linear-gradient(225deg, rgba(99, 102, 241, 0.2), rgba(147, 51, 234, 0.2), rgba(59, 130, 246, 0.2))",
+              "linear-gradient(315deg, rgba(59, 130, 246, 0.2), rgba(99, 102, 241, 0.2), rgba(147, 51, 234, 0.2))"
             ]
           }}
           transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
@@ -166,25 +167,29 @@ const Hero: React.FC = () => {
             transition={{ delay: 1 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
           >
-            <motion.button
-              whileHover={{ 
-                scale: 1.05, 
-                boxShadow: "0 20px 40px rgba(255, 188, 73, 0.4)" 
-              }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-primary-yellow text-deep-black font-bold text-lg rounded-full hover:bg-yellow-400 transition-all duration-300 shadow-xl pulse-glow flex items-center group"
-            >
-              {translations.hero.ctaPrimary}
-              <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </motion.button>
+            <Link to="/trial">
+              <motion.button
+                whileHover={{ 
+                  scale: 1.05, 
+                  boxShadow: "0 20px 40px rgba(255, 188, 73, 0.4)" 
+                }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 bg-primary-yellow text-deep-black font-bold text-lg rounded-full hover:bg-yellow-400 transition-all duration-300 shadow-xl pulse-glow flex items-center group"
+              >
+                {translations.hero.ctaPrimary}
+                <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </motion.button>
+            </Link>
 
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold text-lg rounded-full hover:bg-white hover:text-gray-900 transition-all duration-300"
-            >
-              {translations.hero.ctaSecondary}
-            </motion.button>
+            <Link to="/demo">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold text-lg rounded-full hover:bg-white hover:text-gray-900 transition-all duration-300"
+              >
+                {translations.hero.ctaSecondary}
+              </motion.button>
+            </Link>
           </motion.div>
 
           {/* Trust Indicators */}

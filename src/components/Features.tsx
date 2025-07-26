@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { 
   Calculator, 
   Package, 
@@ -76,7 +77,7 @@ const Features: React.FC = () => {
               rotate: 0 
             }}
             animate={{ 
-              y: [null, -50, null],
+              y: [0, -50, 0],
               rotate: 360,
               opacity: [0.05, 0.15, 0.05]
             }}
@@ -179,16 +180,18 @@ const Features: React.FC = () => {
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
             {translations.features.ready}
           </p>
-          <motion.button
-            whileHover={{ 
-              scale: 1.05, 
-              boxShadow: "0 20px 40px rgba(255, 188, 73, 0.3)" 
-            }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 bg-primary-yellow text-deep-black font-bold text-lg rounded-full hover:bg-yellow-400 transition-all duration-300 shadow-lg"
-          >
-            {translations.features.cta}
-          </motion.button>
+          <Link to="/products/accounting-suite">
+            <motion.button
+              whileHover={{ 
+                scale: 1.05, 
+                boxShadow: "0 20px 40px rgba(255, 188, 73, 0.3)" 
+              }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-4 bg-primary-yellow text-deep-black font-bold text-lg rounded-full hover:bg-yellow-400 transition-all duration-300 shadow-lg"
+            >
+              {translations.features.cta}
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import logo from '../assets/txgo-logo.png';
 import LanguageSwitcher from './LanguageSwitcher';
 import ThemeSwitcher from './ThemeSwitcher';
@@ -21,11 +22,11 @@ const Header: React.FC = () => {
   }, []);
 
   const navItems = [
-    { name: translations.nav.products, href: '#products' },
-    { name: translations.nav.solutions, href: '#solutions' },
-    { name: translations.nav.pricing, href: '#pricing' },
-    { name: translations.nav.about, href: '#about' },
-    { name: translations.nav.contact, href: '#contact' },
+    { name: translations.nav.products, href: '/#products' },
+    { name: translations.nav.solutions, href: '/#solutions' },
+    { name: translations.nav.pricing, href: '/pricing' },
+    { name: translations.nav.about, href: '/about' },
+    { name: translations.nav.contact, href: '/#contact' },
   ];
 
   return (
@@ -41,28 +42,41 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="flex items-center"
-          >
-            <img 
-              src={logo} 
-              alt="TaxGo Global" 
-              className="h-8 w-auto lg:h-10"
-            />
-          </motion.div>
+          <Link to="/">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="flex items-center"
+            >
+              <img 
+                src={logo} 
+                alt="TaxGo Global" 
+                className="h-8 w-auto lg:h-10"
+              />
+            </motion.div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
-              <motion.a
-                key={item.name}
-                href={item.href}
-                whileHover={{ scale: 1.05 }}
-                className="text-deep-black dark:text-white hover:text-primary-yellow font-medium transition-colors duration-200"
-              >
-                {item.name}
-              </motion.a>
+              item.href.startsWith('/#') ? (
+                <motion.a
+                  key={item.name}
+                  href={item.href}
+                  whileHover={{ scale: 1.05 }}
+                  className="text-deep-black dark:text-white hover:text-primary-yellow font-medium transition-colors duration-200"
+                >
+                  {item.name}
+                </motion.a>
+              ) : (
+                <Link key={item.name} to={item.href}>
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    className="text-deep-black dark:text-white hover:text-primary-yellow font-medium transition-colors duration-200"
+                  >
+                    {item.name}
+                  </motion.div>
+                </Link>
+              )
             ))}
           </nav>
 
@@ -70,20 +84,24 @@ const Header: React.FC = () => {
           <div className="hidden lg:flex items-center space-x-4">
             <ThemeSwitcher />
             <LanguageSwitcher />
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-4 py-2 text-deep-black dark:text-white hover:text-primary-yellow font-medium transition-colors duration-200"
-            >
-              {translations.nav.signIn}
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(255, 188, 73, 0.5)" }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 py-2 bg-primary-yellow text-deep-black font-semibold rounded-full hover:bg-yellow-400 transition-all duration-200 shadow-lg"
-            >
-              {translations.nav.startTrial}
-            </motion.button>
+            <Link to="/signin">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-4 py-2 text-deep-black dark:text-white hover:text-primary-yellow font-medium transition-colors duration-200"
+              >
+                {translations.nav.signIn}
+              </motion.button>
+            </Link>
+            <Link to="/trial">
+              <motion.button
+                whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(255, 188, 73, 0.5)" }}
+                whileTap={{ scale: 0.95 }}
+                className="px-6 py-2 bg-primary-yellow text-deep-black font-semibold rounded-full hover:bg-yellow-400 transition-all duration-200 shadow-lg"
+              >
+                {translations.nav.startTrial}
+              </motion.button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -108,27 +126,42 @@ const Header: React.FC = () => {
         >
           <div className="px-4 py-6 space-y-4">
             {navItems.map((item) => (
-              <motion.a
-                key={item.name}
-                href={item.href}
-                whileHover={{ x: 10 }}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-deep-black dark:text-white hover:text-primary-yellow font-medium transition-colors duration-200"
-              >
-                {item.name}
-              </motion.a>
+              item.href.startsWith('/#') ? (
+                <motion.a
+                  key={item.name}
+                  href={item.href}
+                  whileHover={{ x: 10 }}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block text-deep-black dark:text-white hover:text-primary-yellow font-medium transition-colors duration-200"
+                >
+                  {item.name}
+                </motion.a>
+              ) : (
+                <Link key={item.name} to={item.href} onClick={() => setIsMobileMenuOpen(false)}>
+                  <motion.div
+                    whileHover={{ x: 10 }}
+                    className="block text-deep-black dark:text-white hover:text-primary-yellow font-medium transition-colors duration-200"
+                  >
+                    {item.name}
+                  </motion.div>
+                </Link>
+              )
             ))}
             <div className="pt-4 space-y-3">
               <div className="flex items-center justify-between mb-4">
                 <ThemeSwitcher />
                 <LanguageSwitcher />
               </div>
-              <button className="block w-full text-left text-deep-black dark:text-white hover:text-primary-yellow font-medium transition-colors duration-200">
-                {translations.nav.signIn}
-              </button>
-              <button className="block w-full px-6 py-3 bg-primary-yellow text-deep-black font-semibold rounded-full hover:bg-yellow-400 transition-all duration-200 text-center">
-                {translations.nav.startTrial}
-              </button>
+              <Link to="/signin" onClick={() => setIsMobileMenuOpen(false)}>
+                <button className="block w-full text-left text-deep-black dark:text-white hover:text-primary-yellow font-medium transition-colors duration-200">
+                  {translations.nav.signIn}
+                </button>
+              </Link>
+              <Link to="/trial" onClick={() => setIsMobileMenuOpen(false)}>
+                <button className="block w-full px-6 py-3 bg-primary-yellow text-deep-black font-semibold rounded-full hover:bg-yellow-400 transition-all duration-200 text-center">
+                  {translations.nav.startTrial}
+                </button>
+              </Link>
             </div>
           </div>
         </motion.div>

@@ -1,40 +1,32 @@
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Features from './components/Features';
-import IndustrySolutions from './components/IndustrySolutions';
-import GlobalMap from './components/GlobalMap';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import { ScrollProgress } from './components/ScrollAnimations';
-import SmoothScrollProvider from './components/SmoothScrollProvider';
-import SectionTransition from './components/SectionTransition';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AppProvider } from './contexts/AppContext';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import About from './pages/About';
+import Pricing from './pages/Pricing';
+import Demo from './pages/Demo';
+import AccountingSuite from './pages/Products/AccountingSuite';
+import InventoryManagement from './pages/Products/InventoryManagement';
 
 function App() {
   return (
     <AppProvider>
-      <SmoothScrollProvider>
-        <div className="App bg-white dark:bg-gray-900 transition-colors duration-300 relative">
-          <ScrollProgress />
-          <Header />
-          <Hero />
-          
-          <SectionTransition variant="wave" color="#f8fafc" height={80} />
-          <Features />
-          
-          <SectionTransition variant="curve" color="#ecfdf5" height={100} />
-          <IndustrySolutions />
-          
-          <SectionTransition variant="diagonal" color="#f1f5f9" height={90} />
-          <GlobalMap />
-          
-          <SectionTransition variant="zigzag" color="#f8fafc" height={120} />
-          <Contact />
-          
-          <SectionTransition variant="wave" color="#111827" height={100} />
-          <Footer />
-        </div>
-      </SmoothScrollProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="pricing" element={<Pricing />} />
+            <Route path="demo" element={<Demo />} />
+            <Route path="trial" element={<Demo />} />
+            <Route path="contact" element={<Home />} />
+            <Route path="products">
+              <Route path="accounting-suite" element={<AccountingSuite />} />
+              <Route path="inventory-management" element={<InventoryManagement />} />
+            </Route>
+          </Route>
+        </Routes>
+      </Router>
     </AppProvider>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { 
   Mail, 
   Phone, 
@@ -21,19 +22,47 @@ const Footer: React.FC = () => {
   const footerSections = [
     {
       title: translations.footer.sections.products.title,
-      links: translations.footer.sections.products.links.map((link: string) => ({ name: link, href: "#" }))
+      links: [
+        { name: translations.footer.sections.products.links[0], href: "/products/accounting-suite" },
+        { name: translations.footer.sections.products.links[1], href: "/products/inventory-management" },
+        { name: translations.footer.sections.products.links[2], href: "/products/payroll-hr" },
+        { name: translations.footer.sections.products.links[3], href: "/products/ecommerce-platform" },
+        { name: translations.footer.sections.products.links[4], href: "/products/point-of-sale" },
+        { name: translations.footer.sections.products.links[5], href: "/products/enterprise-solutions" }
+      ]
     },
     {
       title: translations.footer.sections.industries.title,
-      links: translations.footer.sections.industries.links.map((link: string) => ({ name: link, href: "#" }))
+      links: [
+        { name: translations.footer.sections.industries.links[0], href: "/industries/healthcare" },
+        { name: translations.footer.sections.industries.links[1], href: "/industries/education" },
+        { name: translations.footer.sections.industries.links[2], href: "/industries/retail-commerce" },
+        { name: translations.footer.sections.industries.links[3], href: "/industries/restaurants" },
+        { name: translations.footer.sections.industries.links[4], href: "/industries/manufacturing" },
+        { name: translations.footer.sections.industries.links[5], href: "/industries/professional-services" }
+      ]
     },
     {
       title: translations.footer.sections.resources.title,
-      links: translations.footer.sections.resources.links.map((link: string) => ({ name: link, href: "#" }))
+      links: [
+        { name: translations.footer.sections.resources.links[0], href: "/resources/documentation" },
+        { name: translations.footer.sections.resources.links[1], href: "/resources/api-reference" },
+        { name: translations.footer.sections.resources.links[2], href: "/resources/help-center" },
+        { name: translations.footer.sections.resources.links[3], href: "/resources/video-tutorials" },
+        { name: translations.footer.sections.resources.links[4], href: "/resources/webinars" },
+        { name: translations.footer.sections.resources.links[5], href: "/resources/case-studies" }
+      ]
     },
     {
       title: translations.footer.sections.company.title,
-      links: translations.footer.sections.company.links.map((link: string) => ({ name: link, href: "#" }))
+      links: [
+        { name: translations.footer.sections.company.links[0], href: "/about" },
+        { name: translations.footer.sections.company.links[1], href: "/careers" },
+        { name: translations.footer.sections.company.links[2], href: "/press-kit" },
+        { name: translations.footer.sections.company.links[3], href: "/partners" },
+        { name: translations.footer.sections.company.links[4], href: "/security" },
+        { name: translations.footer.sections.company.links[5], href: "/privacy-policy" }
+      ]
     }
   ];
 
@@ -129,14 +158,15 @@ const Footer: React.FC = () => {
                 <ul className="space-y-3">
                   {section.links.map((link: any) => (
                     <li key={link.name}>
-                      <motion.a
-                        href={link.href}
-                        whileHover={{ x: 5 }}
-                        className="text-gray-400 hover:text-white transition-colors duration-200 flex items-center group"
-                      >
-                        <ChevronRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-                        <span>{link.name}</span>
-                      </motion.a>
+                      <Link to={link.href}>
+                        <motion.div
+                          whileHover={{ x: 5 }}
+                          className="text-gray-400 hover:text-white transition-colors duration-200 flex items-center group"
+                        >
+                          <ChevronRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                          <span>{link.name}</span>
+                        </motion.div>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -207,8 +237,8 @@ const Footer: React.FC = () => {
             <div className="text-center md:text-left">
               <p className="text-gray-400 text-sm">
                 {translations.footer.copyright} | 
-                <a href="#" className="hover:text-primary-yellow transition-colors ml-1">{translations.footer.terms}</a> | 
-                <a href="#" className="hover:text-primary-yellow transition-colors ml-1">{translations.footer.privacy}</a>
+                <Link to="/terms" className="hover:text-primary-yellow transition-colors ml-1">{translations.footer.terms}</Link> | 
+                <Link to="/privacy" className="hover:text-primary-yellow transition-colors ml-1">{translations.footer.privacy}</Link>
               </p>
             </div>
 
