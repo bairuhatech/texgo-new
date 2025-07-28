@@ -142,7 +142,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
           >
-            <span className="text-deep-black dark:text-white">Revolutionize Your</span>
+            <span className="text-deep-black dark:text-white">{translations.hero.revolutionizeYour}</span>
             <br />
             <motion.span
               key={currentText}
