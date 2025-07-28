@@ -4,6 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 import SmoothScrollProvider from './SmoothScrollProvider';
 import { ScrollProgress } from './ScrollAnimations';
+import AIChatbot from './AIChatbot';
 
 const Layout: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const Layout: React.FC = () => {
           <Outlet />
         </main>
         <Footer />
+        <AIChatbot />
       </div>
     </SmoothScrollProvider>
   );
