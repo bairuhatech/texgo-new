@@ -14,10 +14,38 @@ import {
   Globe,
   Store,
   Database,
+  ExternalLink,
 } from "lucide-react";
 import { useApp } from "../contexts/AppContext";
 
-const Features: React.FC = () => {
+interface FeatureCardProps {
+  title: string;
+  description: string;
+  url?: string;
+  onClick?: () => void;
+  openInNewTab?: boolean;
+}
+
+interface FeaturesProps {
+  // Optional array of custom feature configurations
+  customFeatures?: FeatureCardProps[];
+  // Optional function to generate URLs dynamically
+  urlGenerator?: (title: string, index: number) => string;
+  // Optional click handler for all cards
+  onFeatureClick?: (feature: any, index: number) => void;
+  // Whether cards should be clickable at all
+  clickable?: boolean;
+  // Whether to open links in new tabs
+  openInNewTab?: boolean;
+}
+
+const Features: React.FC<FeaturesProps> = ({
+  customFeatures,
+  urlGenerator,
+  onFeatureClick,
+  clickable = true,
+  openInNewTab = true,
+}) => {
   const { translations } = useApp();
 
   const featureIcons = [
@@ -50,14 +78,55 @@ const Features: React.FC = () => {
     "from-violet-500 to-violet-600",
   ];
 
-  const features = translations.features.items.map(
-    (item: any, index: number) => ({
-      icon: featureIcons[index],
-      title: item.title,
-      description: item.description,
-      color: featureColors[index],
-    })
-  );
+  // Generate features data
+  const features =
+    customFeatures ||
+    translations.features.items.map((item: any, index: number) => {
+      let url = "";
+
+      if (urlGenerator) {
+        url = urlGenerator(item.title, index);
+      } else {
+        // Use enhanced priority system: externalUrl > url > generated
+        if (item.externalUrl) {
+          url = item.externalUrl;
+        } else if (item.url) {
+          url = item.url;
+        } else {
+          url = `/features/${item.title
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, "-")}`;
+        }
+      }
+
+      return {
+        icon: featureIcons[index],
+        title: item.title,
+        description: item.description,
+        color: featureColors[index],
+        url: url,
+        openInNewTab:
+          item.openInNewTab !== undefined ? item.openInNewTab : openInNewTab,
+        // Pass the full item for the click handler to access enhanced properties
+        item: item,
+        // Add indicators for UI feedback
+        isExternal: !!item.externalUrl,
+        hasExternalOption: !!item.externalUrl,
+        hasFallback: !!item.url,
+      };
+    });
+
+  // Handle feature card click
+  const handleFeatureClick = (
+    feature: any,
+    index: number,
+    event?: React.MouseEvent
+  ) => {
+    if (onFeatureClick) {
+      event?.preventDefault();
+      onFeatureClick(feature, index);
+    }
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -81,6 +150,42 @@ const Features: React.FC = () => {
       },
     },
   };
+
+  // Render feature card content
+  const renderCardContent = (feature: any) => (
+    <div
+      className={`glass-effect p-6 rounded-2xl h-full transition-all duration-300 group-hover:shadow-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 ${
+        clickable ? "cursor-pointer" : ""
+      }`}
+    >
+      {/* Icon with Gradient Background */}
+      <div
+        className={`w-14 h-14 rounded-xl bg-gradient-to-r ${feature.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
+      >
+        {React.createElement(feature.icon, {
+          className: "w-7 h-7 text-white",
+        })}
+      </div>
+
+      {/* Content */}
+      <h3 className="text-lg font-bold text-deep-black dark:text-white mb-3 group-hover:text-[#ff9800] transition-colors duration-300">
+        {feature.title}
+      </h3>
+      <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
+        {feature.description}
+      </p>
+
+      {/* External Link Icon - only show if clickable */}
+      {clickable && (
+        <div className="flex items-center justify-end">
+          <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-[#ff9800] transition-colors duration-300" />
+        </div>
+      )}
+
+      {/* Hover Effect Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-primary-yellow/5 to-success-green/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+    </div>
+  );
 
   return (
     <section
@@ -171,27 +276,29 @@ const Features: React.FC = () => {
               }}
               className="group relative"
             >
-              <div className="glass-effect p-6 rounded-2xl h-full transition-all duration-300 group-hover:shadow-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800">
-                {/* Icon with Gradient Background */}
-                <div
-                  className={`w-14 h-14 rounded-xl bg-gradient-to-r ${feature.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
+              {clickable && feature.url && !onFeatureClick ? (
+                // Render as Link if URL is provided and no custom click handler
+                <Link
+                  to={feature.url}
+                  target={feature.openInNewTab ? "_blank" : "_self"}
+                  rel={feature.openInNewTab ? "noopener noreferrer" : undefined}
+                  className="block h-full"
+                  onClick={(e) => handleFeatureClick(feature, index, e)}
                 >
-                  {React.createElement(feature.icon, {
-                    className: "w-7 h-7 text-white",
-                  })}
+                  {renderCardContent(feature)}
+                </Link>
+              ) : clickable ? (
+                // Render as clickable div with custom handler
+                <div
+                  className="block h-full"
+                  onClick={() => handleFeatureClick(feature, index)}
+                >
+                  {renderCardContent(feature)}
                 </div>
-
-                {/* Content */}
-                <h3 className="text-lg font-bold text-deep-black dark:text-white mb-3 group-hover:text-[#ff9800] transition-colors duration-300">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-                  {feature.description}
-                </p>
-
-                {/* Hover Effect Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-r from-primary-yellow/5 to-success-green/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-              </div>
+              ) : (
+                // Render as non-clickable div
+                <div className="block h-full">{renderCardContent(feature)}</div>
+              )}
             </motion.div>
           ))}
         </motion.div>
@@ -207,7 +314,11 @@ const Features: React.FC = () => {
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
             {translations.features.ready}
           </p>
-          <Link to="/products/accounting-suite">
+          <Link
+            to="/features/complete-accounting-suite"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <motion.button
               whileHover={{
                 scale: 1.05,
