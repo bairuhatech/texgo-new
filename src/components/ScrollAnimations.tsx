@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import React, { useEffect, useState } from "react";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 interface ScrollRevealProps {
   children: React.ReactNode;
-  direction?: 'up' | 'down' | 'left' | 'right';
+  direction?: "up" | "down" | "left" | "right";
   delay?: number;
   duration?: number;
   distance?: number;
@@ -13,43 +13,52 @@ interface ScrollRevealProps {
 
 export const ScrollReveal: React.FC<ScrollRevealProps> = ({
   children,
-  direction = 'up',
+  direction = "up",
   delay = 0,
   duration = 0.8,
   distance = 50,
-  className = ''
+  className = "",
 }) => {
   const [ref, inView] = useInView({
     threshold: 0.1,
-    triggerOnce: true
+    triggerOnce: true,
   });
 
   const getInitialPosition = () => {
     switch (direction) {
-      case 'up': return { y: distance, x: 0 };
-      case 'down': return { y: -distance, x: 0 };
-      case 'left': return { x: distance, y: 0 };
-      case 'right': return { x: -distance, y: 0 };
-      default: return { y: distance, x: 0 };
+      case "up":
+        return { y: distance, x: 0 };
+      case "down":
+        return { y: -distance, x: 0 };
+      case "left":
+        return { x: distance, y: 0 };
+      case "right":
+        return { x: -distance, y: 0 };
+      default:
+        return { y: distance, x: 0 };
     }
   };
 
   return (
     <motion.div
       ref={ref}
-      initial={{ 
-        opacity: 0, 
-        ...getInitialPosition()
+      initial={{
+        opacity: 0,
+        ...getInitialPosition(),
       }}
-      animate={inView ? {
-        opacity: 1,
-        x: 0,
-        y: 0
-      } : {}}
+      animate={
+        inView
+          ? {
+              opacity: 1,
+              x: 0,
+              y: 0,
+            }
+          : {}
+      }
       transition={{
         duration,
         delay,
-        ease: "easeOut"
+        ease: "easeOut",
       }}
       className={className}
     >
@@ -67,17 +76,14 @@ interface ParallaxProps {
 export const Parallax: React.FC<ParallaxProps> = ({
   children,
   speed = 0.5,
-  className = ''
+  className = "",
 }) => {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], [0, speed * -100]);
   const smoothY = useSpring(y, { stiffness: 100, damping: 30 });
 
   return (
-    <motion.div
-      style={{ y: smoothY }}
-      className={className}
-    >
+    <motion.div style={{ y: smoothY }} className={className}>
       {children}
     </motion.div>
   );
@@ -87,7 +93,9 @@ interface ScrollProgressProps {
   className?: string;
 }
 
-export const ScrollProgress: React.FC<ScrollProgressProps> = ({ className = '' }) => {
+export const ScrollProgress: React.FC<ScrollProgressProps> = ({
+  className = "",
+}) => {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
 
@@ -112,19 +120,19 @@ export const FloatingElement: React.FC<FloatingElementProps> = ({
   amplitude = 20,
   frequency = 3,
   delay = 0,
-  className = ''
+  className = "",
 }) => {
   return (
     <motion.div
       animate={{
         y: [0, -amplitude, 0],
-        rotate: [-2, 2, -2]
+        rotate: [-2, 2, -2],
       }}
       transition={{
         duration: frequency,
         repeat: Infinity,
         ease: "easeInOut",
-        delay
+        delay,
       }}
       className={className}
     >
@@ -142,11 +150,11 @@ interface StaggeredRevealProps {
 export const StaggeredReveal: React.FC<StaggeredRevealProps> = ({
   children,
   staggerDelay = 0.1,
-  className = ''
+  className = "",
 }) => {
   const [ref, inView] = useInView({
     threshold: 0.1,
-    triggerOnce: true
+    triggerOnce: true,
   });
 
   return (
@@ -155,14 +163,18 @@ export const StaggeredReveal: React.FC<StaggeredRevealProps> = ({
         <motion.div
           key={index}
           initial={{ opacity: 0, y: 50 }}
-          animate={inView ? {
-            opacity: 1,
-            y: 0
-          } : {}}
+          animate={
+            inView
+              ? {
+                  opacity: 1,
+                  y: 0,
+                }
+              : {}
+          }
           transition={{
             duration: 0.6,
             delay: index * staggerDelay,
-            ease: "easeOut"
+            ease: "easeOut",
           }}
         >
           {child}
@@ -183,13 +195,13 @@ interface CountUpProps {
 export const CountUp: React.FC<CountUpProps> = ({
   end,
   duration = 2,
-  suffix = '',
-  prefix = '',
-  className = ''
+  suffix = "",
+  prefix = "",
+  className = "",
 }) => {
   const [ref, inView] = useInView({
     threshold: 0.1,
-    triggerOnce: true
+    triggerOnce: true,
   });
 
   const [count, setCount] = useState(0);
@@ -198,27 +210,31 @@ export const CountUp: React.FC<CountUpProps> = ({
     if (inView) {
       const startTime = Date.now();
       const startCount = 0;
-      
+
       const updateCount = () => {
         const elapsed = Date.now() - startTime;
         const progress = Math.min(elapsed / (duration * 1000), 1);
         const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-        const currentCount = Math.floor(startCount + (end - startCount) * easeOutQuart);
-        
+        const currentCount = Math.floor(
+          startCount + (end - startCount) * easeOutQuart
+        );
+
         setCount(currentCount);
-        
+
         if (progress < 1) {
           requestAnimationFrame(updateCount);
         }
       };
-      
+
       updateCount();
     }
   }, [inView, end, duration]);
 
   return (
     <span ref={ref} className={className}>
-      {prefix}{count.toLocaleString()}{suffix}
+      {prefix}
+      {count.toLocaleString()}
+      {suffix}
     </span>
   );
 };
@@ -235,13 +251,13 @@ export const Typewriter: React.FC<TypewriterProps> = ({
   text,
   speed = 50,
   delay = 0,
-  className = '',
-  onComplete
+  className = "",
+  onComplete,
 }) => {
-  const [displayText, setDisplayText] = useState('');
+  const [displayText, setDisplayText] = useState("");
   const [ref, inView] = useInView({
     threshold: 0.1,
-    triggerOnce: true
+    triggerOnce: true,
   });
 
   useEffect(() => {
@@ -251,16 +267,16 @@ export const Typewriter: React.FC<TypewriterProps> = ({
         const interval = setInterval(() => {
           setDisplayText(text.slice(0, index + 1));
           index++;
-          
+
           if (index === text.length) {
             clearInterval(interval);
             if (onComplete) onComplete();
           }
         }, speed);
-        
+
         return () => clearInterval(interval);
       }, delay);
-      
+
       return () => clearTimeout(timer);
     }
   }, [inView, text, speed, delay, onComplete]);
@@ -283,10 +299,10 @@ export const ScrollTriggeredAnimation: React.FC<{
   children: React.ReactNode;
   animation: any;
   className?: string;
-}> = ({ children, animation, className = '' }) => {
+}> = ({ children, animation, className = "" }) => {
   const [ref, inView] = useInView({
     threshold: 0.1,
-    triggerOnce: true
+    triggerOnce: true,
   });
 
   return (

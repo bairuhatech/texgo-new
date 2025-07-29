@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import { ChevronRight, Brain, Zap, Globe, TrendingUp } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { useApp } from '../contexts/AppContext';
-import { FloatingElement } from './ScrollAnimations';
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { ChevronRight, Brain, Zap, Globe, TrendingUp } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useApp } from "../contexts/AppContext";
+import { FloatingElement } from "./ScrollAnimations";
 
 const Hero: React.FC = () => {
   const { translations } = useApp();
@@ -29,53 +29,57 @@ const Hero: React.FC = () => {
       {/* Animated Background Pattern */}
       <div className="absolute inset-0">
         {/* Animated Gradient Overlay */}
-        <motion.div 
+        <motion.div
           className="absolute inset-0 bg-gradient-to-r from-primary-yellow/10 via-success-green/10 to-blue-200/10"
           animate={{
             background: [
               "linear-gradient(45deg, rgba(255, 188, 73, 0.08), rgba(53, 181, 41, 0.08), rgba(59, 130, 246, 0.08))",
               "linear-gradient(135deg, rgba(53, 181, 41, 0.08), rgba(59, 130, 246, 0.08), rgba(255, 188, 73, 0.08))",
               "linear-gradient(225deg, rgba(59, 130, 246, 0.08), rgba(255, 188, 73, 0.08), rgba(53, 181, 41, 0.08))",
-              "linear-gradient(315deg, rgba(255, 188, 73, 0.08), rgba(53, 181, 41, 0.08), rgba(59, 130, 246, 0.08))"
-            ]
+              "linear-gradient(315deg, rgba(255, 188, 73, 0.08), rgba(53, 181, 41, 0.08), rgba(59, 130, 246, 0.08))",
+            ],
           }}
           transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
         />
-        
+
         {/* Floating Particles */}
         {[...Array(50)].map((_, i) => (
           <motion.div
             key={i}
             className={`absolute w-1 h-1 rounded-full ${
-              i % 3 === 0 ? 'bg-primary-yellow' : 
-              i % 3 === 1 ? 'bg-success-green' : 
-              'bg-blue-400'
+              i % 3 === 0
+                ? "bg-primary-yellow"
+                : i % 3 === 1
+                ? "bg-success-green"
+                : "bg-blue-400"
             }`}
-            initial={{ 
+            initial={{
               opacity: 0,
               x: Math.random() * window.innerWidth,
               y: Math.random() * window.innerHeight,
             }}
-            animate={{ 
+            animate={{
               opacity: [0, 1, 0],
               scale: [0, 1.5, 0],
-              y: [null, -100]
+              y: [null, -100],
             }}
             transition={{
               duration: 6,
               repeat: Infinity,
               delay: i * 0.1,
-              ease: "easeOut"
+              ease: "easeOut",
             }}
           />
         ))}
-        
+
         {/* Geometric Shapes */}
         {[...Array(8)].map((_, i) => (
           <motion.div
             key={`shape-${i}`}
             className={`absolute border rounded-full ${
-              i % 2 === 0 ? 'border-primary-yellow/30' : 'border-success-green/30'
+              i % 2 === 0
+                ? "border-primary-yellow/30"
+                : "border-success-green/30"
             }`}
             style={{
               width: `${100 + i * 50}px`,
@@ -88,8 +92,12 @@ const Hero: React.FC = () => {
               scale: [1, 1.1, 1],
             }}
             transition={{
-              rotate: { duration: 20 + i * 5, repeat: Infinity, ease: "linear" },
-              scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+              rotate: {
+                duration: 20 + i * 5,
+                repeat: Infinity,
+                ease: "linear",
+              },
+              scale: { duration: 4, repeat: Infinity, ease: "easeInOut" },
             }}
           />
         ))}
@@ -100,9 +108,9 @@ const Hero: React.FC = () => {
         <div
           key={index}
           className="absolute hidden lg:block"
-          style={{ 
-            left: `${50 + element.x}px`, 
-            top: `${50 + element.y}%` 
+          style={{
+            left: `${50 + element.x}px`,
+            top: `${50 + element.y}%`,
           }}
         >
           <FloatingElement
@@ -111,7 +119,9 @@ const Hero: React.FC = () => {
             delay={element.delay}
           >
             <div className="glass-effect p-4 rounded-xl bg-white/20 dark:bg-gray-800/30 backdrop-blur-sm">
-              {React.createElement(element.icon, { className: "w-8 h-8 text-primary-yellow" })}
+              {React.createElement(element.icon, {
+                className: "w-8 h-8 text-primary-yellow",
+              })}
             </div>
           </FloatingElement>
         </div>
@@ -142,7 +152,9 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
           >
-            <span className="text-deep-black dark:text-white">{translations.hero.revolutionizeYour}</span>
+            <span className="text-deep-black dark:text-white">
+              {translations.hero.revolutionizeYour}
+            </span>
             <br />
             <motion.span
               key={currentText}
@@ -175,12 +187,12 @@ const Hero: React.FC = () => {
           >
             <Link to="/trial">
               <motion.button
-                whileHover={{ 
-                  scale: 1.05, 
-                  boxShadow: "0 20px 40px rgba(255, 188, 73, 0.4)" 
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 20px 40px rgba(255, 188, 73, 0.4)",
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-primary-yellow text-deep-black font-bold text-lg rounded-full hover:bg-yellow-400 transition-all duration-300 shadow-xl pulse-glow flex items-center group"
+                className="px-8 py-4 bg-[#ff9800] text-deep-black font-bold text-lg rounded-full hover:bg-[#18a762] transition-all duration-300 shadow-xl pulse-glow flex items-center group"
               >
                 {translations.hero.ctaPrimary}
                 <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -207,15 +219,21 @@ const Hero: React.FC = () => {
           >
             <div className="flex items-center space-x-2">
               <div className="w-3 h-3 bg-success-green rounded-full animate-pulse"></div>
-              <span className="font-medium">{translations.hero.trustIndicators.clients}</span>
+              <span className="font-medium">
+                {translations.hero.trustIndicators.clients}
+              </span>
             </div>
             <div className="flex items-center space-x-2">
               <div className="w-3 h-3 bg-success-green rounded-full animate-pulse"></div>
-              <span className="font-medium">{translations.hero.trustIndicators.uptime}</span>
+              <span className="font-medium">
+                {translations.hero.trustIndicators.uptime}
+              </span>
             </div>
             <div className="flex items-center space-x-2">
               <div className="w-3 h-3 bg-success-green rounded-full animate-pulse"></div>
-              <span className="font-medium">{translations.hero.trustIndicators.security}</span>
+              <span className="font-medium">
+                {translations.hero.trustIndicators.security}
+              </span>
             </div>
           </motion.div>
         </motion.div>

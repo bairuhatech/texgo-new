@@ -1,24 +1,28 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
-import { useApp } from '../contexts/AppContext';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
+import { useApp } from "../contexts/AppContext";
 
 const Contact: React.FC = () => {
   const { translations } = useApp();
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    phone: '',
-    message: '',
-    solution: 'accounting'
+    name: "",
+    email: "",
+    company: "",
+    phone: "",
+    message: "",
+    solution: "accounting",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -35,36 +39,39 @@ const Contact: React.FC = () => {
       icon: Mail,
       title: "Email Us",
       content: "hello@taxgoglobal.com",
-      action: "mailto:hello@taxgoglobal.com"
+      action: "mailto:hello@taxgoglobal.com",
     },
     {
       icon: Phone,
       title: "Call Us",
       content: "+1 (555) 123-4567",
-      action: "tel:+15551234567"
+      action: "tel:+15551234567",
     },
     {
       icon: MapPin,
       title: "Visit Us",
       content: "123 Business Ave, Tech City, TC 12345",
-      action: "#"
-    }
+      action: "#",
+    },
   ];
 
   const solutions = [
-    { value: 'accounting', label: 'Accounting Suite' },
-    { value: 'inventory', label: 'Inventory Management' },
-    { value: 'payroll', label: 'Payroll & HR' },
-    { value: 'ecommerce', label: 'Ecommerce Platform' },
-    { value: 'healthcare', label: 'Healthcare Solutions' },
-    { value: 'education', label: 'Education Platform' },
-    { value: 'enterprise', label: 'Enterprise Solutions' },
-    { value: 'custom', label: 'Custom Solution' }
+    { value: "accounting", label: "Accounting Suite" },
+    { value: "inventory", label: "Inventory Management" },
+    { value: "payroll", label: "Payroll & HR" },
+    { value: "ecommerce", label: "Ecommerce Platform" },
+    { value: "healthcare", label: "Healthcare Solutions" },
+    { value: "education", label: "Education Platform" },
+    { value: "enterprise", label: "Enterprise Solutions" },
+    { value: "custom", label: "Custom Solution" },
   ];
 
   if (isSubmitted) {
     return (
-      <section id="contact" className="py-20 bg-gradient-to-br from-success-green to-emerald-600">
+      <section
+        id="contact"
+        className="py-20 bg-gradient-to-br from-success-green to-emerald-600"
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ scale: 0, opacity: 0 }}
@@ -80,7 +87,9 @@ const Contact: React.FC = () => {
             >
               <CheckCircle className="w-10 h-10 text-success-green" />
             </motion.div>
-            <h2 className="text-4xl font-bold mb-4">{translations.contact.thankYou}</h2>
+            <h2 className="text-4xl font-bold mb-4">
+              {translations.contact.thankYou}
+            </h2>
             <p className="text-xl mb-8">
               {translations.contact.successMessage}
             </p>
@@ -99,7 +108,10 @@ const Contact: React.FC = () => {
   }
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-light-gray to-white dark:from-gray-800 dark:to-gray-900">
+    <section
+      id="contact"
+      className="py-20 bg-gradient-to-br from-light-gray to-white dark:from-gray-800 dark:to-gray-900"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -125,8 +137,10 @@ const Contact: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-2xl font-bold mb-8 text-deep-black dark:text-white">{translations.contact.getInTouch}</h3>
-            
+            <h3 className="text-2xl font-bold mb-8 text-deep-black dark:text-white">
+              {translations.contact.getInTouch}
+            </h3>
+
             <div className="space-y-6 mb-12">
               {contactInfo.map((info, index) => (
                 <motion.a
@@ -135,12 +149,16 @@ const Contact: React.FC = () => {
                   whileHover={{ scale: 1.02, x: 10 }}
                   className="flex items-center space-x-4 p-4 bg-white dark:bg-gray-800 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 group shadow-lg border border-gray-100 dark:border-gray-700"
                 >
-                  <div className="w-12 h-12 bg-primary-yellow rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 bg-[#ff9800] rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                     <info.icon className="w-6 h-6 text-deep-black" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-deep-black dark:text-white">{info.title}</h4>
-                    <p className="text-gray-600 dark:text-gray-300">{info.content}</p>
+                    <h4 className="font-semibold text-deep-black dark:text-white">
+                      {info.title}
+                    </h4>
+                    <p className="text-gray-600 dark:text-gray-300">
+                      {info.content}
+                    </p>
                   </div>
                 </motion.a>
               ))}
@@ -155,8 +173,12 @@ const Contact: React.FC = () => {
                 transition={{ delay: 0.2 }}
                 className="text-center p-4 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700"
               >
-                <div className="text-3xl font-bold text-primary-yellow mb-2">24/7</div>
-                <div className="text-gray-600 dark:text-gray-300">{translations.footer.support}</div>
+                <div className="text-3xl font-bold text-[#18a762] mb-2">
+                  24/7
+                </div>
+                <div className="text-gray-600 dark:text-gray-300">
+                  {translations.footer.support}
+                </div>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -165,8 +187,12 @@ const Contact: React.FC = () => {
                 transition={{ delay: 0.4 }}
                 className="text-center p-4 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700"
               >
-                <div className="text-3xl font-bold text-primary-yellow mb-2">500+</div>
-                <div className="text-gray-600 dark:text-gray-300">{translations.footer.happyClients}</div>
+                <div className="text-3xl font-bold text-[#18a762] mb-2">
+                  500+
+                </div>
+                <div className="text-gray-600 dark:text-gray-300">
+                  {translations.footer.happyClients}
+                </div>
               </motion.div>
             </div>
           </motion.div>
@@ -214,7 +240,7 @@ const Contact: React.FC = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-{translations.contact.companyName}
+                    {translations.contact.companyName}
                   </label>
                   <input
                     type="text"
@@ -227,7 +253,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-{translations.contact.phoneNumber}
+                    {translations.contact.phoneNumber}
                   </label>
                   <input
                     type="tel"
@@ -251,7 +277,11 @@ const Contact: React.FC = () => {
                   className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-yellow text-deep-black dark:text-white"
                 >
                   {solutions.map((solution) => (
-                    <option key={solution.value} value={solution.value} className="bg-white dark:bg-gray-700 text-deep-black dark:text-white">
+                    <option
+                      key={solution.value}
+                      value={solution.value}
+                      className="bg-white dark:bg-gray-700 text-deep-black dark:text-white"
+                    >
                       {solution.label}
                     </option>
                   ))}
@@ -268,7 +298,7 @@ const Contact: React.FC = () => {
                   rows={5}
                   value={formData.message}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-yellow text-deep-black dark:text-white placeholder-gray-500 dark:placeholder-gray-400 resize-none"
+                  className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ff9800] text-deep-black dark:text-white placeholder-gray-500 dark:placeholder-gray-400 resize-none"
                   placeholder="Tell us about your specific needs and requirements..."
                 ></textarea>
               </div>
@@ -277,7 +307,7 @@ const Contact: React.FC = () => {
                 type="submit"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full flex items-center justify-center space-x-2 px-8 py-4 bg-primary-yellow text-deep-black font-bold text-lg rounded-full hover:bg-yellow-400 transition-all duration-300 shadow-lg"
+                className="w-full flex items-center justify-center space-x-2 px-8 py-4 bg-[#ff9800] text-deep-black font-bold text-lg rounded-full hover:bg-[#18a762] transition-all duration-300 shadow-lg"
               >
                 <span>{translations.contact.sendMessage}</span>
                 <Send className="w-5 h-5" />

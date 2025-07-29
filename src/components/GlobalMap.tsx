@@ -1,25 +1,49 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { MapPin, Users, Building, Globe } from 'lucide-react';
-import { useApp } from '../contexts/AppContext';
+import React from "react";
+import { motion } from "framer-motion";
+import { MapPin, Users, Building, Globe } from "lucide-react";
+import { useApp } from "../contexts/AppContext";
 
 const GlobalMap: React.FC = () => {
   const { translations } = useApp();
-  
+
   const locations = [
-    { name: 'North America', x: 25, y: 35, clients: '200+', color: 'bg-blue-500' },
-    { name: 'Europe', x: 50, y: 25, clients: '150+', color: 'bg-green-500' },
-    { name: 'Asia Pacific', x: 75, y: 40, clients: '180+', color: 'bg-purple-500' },
-    { name: 'Middle East', x: 60, y: 45, clients: '80+', color: 'bg-yellow-500' },
-    { name: 'Africa', x: 55, y: 60, clients: '50+', color: 'bg-red-500' },
-    { name: 'South America', x: 35, y: 70, clients: '60+', color: 'bg-pink-500' },
+    {
+      name: "North America",
+      x: 25,
+      y: 35,
+      clients: "200+",
+      color: "bg-blue-500",
+    },
+    { name: "Europe", x: 50, y: 25, clients: "150+", color: "bg-green-500" },
+    {
+      name: "Asia Pacific",
+      x: 75,
+      y: 40,
+      clients: "180+",
+      color: "bg-purple-500",
+    },
+    {
+      name: "Middle East",
+      x: 60,
+      y: 45,
+      clients: "80+",
+      color: "bg-yellow-500",
+    },
+    { name: "Africa", x: 55, y: 60, clients: "50+", color: "bg-red-500" },
+    {
+      name: "South America",
+      x: 35,
+      y: 70,
+      clients: "60+",
+      color: "bg-pink-500",
+    },
   ];
 
   const stats = [
-    { icon: Users, label: 'Active Users', value: '50,000+' },
-    { icon: Building, label: 'Enterprise Clients', value: '500+' },
-    { icon: Globe, label: 'Countries', value: '25+' },
-    { icon: MapPin, label: 'Cities', value: '100+' },
+    { icon: Users, label: "Active Users", value: "50,000+" },
+    { icon: Building, label: "Enterprise Clients", value: "500+" },
+    { icon: Globe, label: "Countries", value: "25+" },
+    { icon: MapPin, label: "Cities", value: "100+" },
   ];
 
   return (
@@ -43,30 +67,30 @@ const GlobalMap: React.FC = () => {
               transition={{
                 duration: 8 + i,
                 repeat: Infinity,
-                ease: "easeInOut"
+                ease: "easeInOut",
               }}
             />
           ))}
         </svg>
-        
+
         {/* Floating Globe Icons */}
         {[...Array(8)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute opacity-5 dark:opacity-10"
-            initial={{ 
+            initial={{
               scale: 0.5,
-              rotate: 0 
+              rotate: 0,
             }}
-            animate={{ 
+            animate={{
               scale: [0.5, 1, 0.5],
               rotate: 360,
-              y: [0, -20, 0]
+              y: [0, -20, 0],
             }}
             transition={{
               duration: 12 + i * 2,
               repeat: Infinity,
-              ease: "easeInOut"
+              ease: "easeInOut",
             }}
             style={{
               left: `${Math.random() * 100}%`,
@@ -76,7 +100,7 @@ const GlobalMap: React.FC = () => {
             <Globe className="w-10 h-10 text-blue-500 dark:text-cyan-400" />
           </motion.div>
         ))}
-        
+
         {/* Ripple Effects */}
         {[...Array(4)].map((_, i) => (
           <motion.div
@@ -85,24 +109,24 @@ const GlobalMap: React.FC = () => {
             style={{
               width: `${300 + i * 150}px`,
               height: `${300 + i * 150}px`,
-              left: '50%',
-              top: '50%',
+              left: "50%",
+              top: "50%",
               marginLeft: `-${150 + i * 75}px`,
               marginTop: `-${150 + i * 75}px`,
             }}
             animate={{
               scale: [1, 1.5, 1],
-              opacity: [0.4, 0.1, 0.4]
+              opacity: [0.4, 0.1, 0.4],
             }}
             transition={{
               duration: 6 + i * 2,
               repeat: Infinity,
-              ease: "easeInOut"
+              ease: "easeInOut",
             }}
           />
         ))}
       </div>
-      
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
@@ -113,7 +137,9 @@ const GlobalMap: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-deep-black dark:text-white">
-            <span className="gradient-text">{translations.globalMap.title}</span>
+            <span className="gradient-text">
+              {translations.globalMap.title}
+            </span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
             {translations.globalMap.subtitle}
@@ -137,17 +163,17 @@ const GlobalMap: React.FC = () => {
                   <path
                     d="M50 60 L100 50 L140 70 L120 100 L70 90 Z"
                     fill="currentColor"
-                    className="text-primary-yellow"
+                    className="text-[#ff9800]"
                   />
                   <path
                     d="M180 40 L250 45 L240 80 L200 85 L170 70 Z"
                     fill="currentColor"
-                    className="text-primary-yellow"
+                    className="text-[#ff9800]"
                   />
                   <path
                     d="M280 60 L350 70 L340 120 L290 110 Z"
                     fill="currentColor"
-                    className="text-primary-yellow"
+                    className="text-[#ff9800]"
                   />
                 </svg>
               </div>
@@ -173,11 +199,13 @@ const GlobalMap: React.FC = () => {
                       transition={{ duration: 2, repeat: Infinity }}
                       className={`absolute inset-0 ${location.color} rounded-full`}
                     />
-                    
+
                     {/* Tooltip */}
                     <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-deep-black/90 text-white px-3 py-2 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg">
                       <div className="font-semibold">{location.name}</div>
-                      <div className="text-primary-yellow">{location.clients} clients</div>
+                      <div className="text-[#ff9800]">
+                        {location.clients} clients
+                      </div>
                     </div>
                   </motion.div>
                 </motion.div>
@@ -222,15 +250,15 @@ const GlobalMap: React.FC = () => {
                   whileHover={{ scale: 1.05 }}
                   className="bg-white dark:bg-gray-800 p-6 rounded-2xl text-center group hover:bg-primary-yellow/10 dark:hover:bg-primary-yellow/20 transition-all duration-300 shadow-lg border border-gray-100 dark:border-gray-700"
                 >
-                  <div className="w-12 h-12 bg-primary-yellow rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                    {React.createElement(stat.icon, { className: "w-6 h-6 text-deep-black" })}
+                  <div className="w-12 h-12 bg-[#ff9800] rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                    {React.createElement(stat.icon, {
+                      className: "w-6 h-6 text-deep-black",
+                    })}
                   </div>
-                  <div className="text-2xl font-bold text-primary-yellow mb-2">
+                  <div className="text-2xl font-bold text-[#18a762] mb-2">
                     {stat.value}
                   </div>
-                  <div className="text-gray-600 text-sm">
-                    {stat.label}
-                  </div>
+                  <div className="text-gray-600 text-sm">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -242,16 +270,18 @@ const GlobalMap: React.FC = () => {
               transition={{ delay: 0.6, duration: 0.6 }}
               className="mt-8 p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700"
             >
-              <h3 className="text-xl font-bold mb-4 text-primary-yellow">
+              <h3 className="text-xl font-bold mb-4 text-[#ff9800]">
                 {translations.globalMap.whyChoose}
               </h3>
               <ul className="space-y-3 text-gray-600 dark:text-gray-300">
-                {translations.globalMap.features.map((feature: string, index: number) => (
-                  <li key={index} className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-success-green rounded-full"></div>
-                    <span>{feature}</span>
-                  </li>
-                ))}
+                {translations.globalMap.features.map(
+                  (feature: string, index: number) => (
+                    <li key={index} className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-[#18a762] rounded-full"></div>
+                      <span>{feature}</span>
+                    </li>
+                  )
+                )}
               </ul>
             </motion.div>
           </motion.div>

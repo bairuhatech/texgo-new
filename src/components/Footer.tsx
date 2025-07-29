@@ -1,69 +1,138 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Facebook, 
-  Twitter, 
-  Linkedin, 
-  Instagram, 
+import React from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
   Youtube,
   ChevronRight,
-  ArrowUp
-} from 'lucide-react';
-import logo from '../assets/txgo-logo.png';
-import { useApp } from '../contexts/AppContext';
+  ArrowUp,
+} from "lucide-react";
+import logo from "../assets/txgo-logo.png";
+import { useApp } from "../contexts/AppContext";
 
 const Footer: React.FC = () => {
   const { translations } = useApp();
-  
+
   const footerSections = [
     {
       title: translations.footer.sections.products.title,
       links: [
-        { name: translations.footer.sections.products.links[0], href: "/products/accounting-suite" },
-        { name: translations.footer.sections.products.links[1], href: "/products/inventory-management" },
-        { name: translations.footer.sections.products.links[2], href: "/products/payroll-hr" },
-        { name: translations.footer.sections.products.links[3], href: "/products/ecommerce-platform" },
-        { name: translations.footer.sections.products.links[4], href: "/products/point-of-sale" },
-        { name: translations.footer.sections.products.links[5], href: "/products/enterprise-solutions" }
-      ]
+        {
+          name: translations.footer.sections.products.links[0],
+          href: "/products/accounting-suite",
+        },
+        {
+          name: translations.footer.sections.products.links[1],
+          href: "/products/inventory-management",
+        },
+        {
+          name: translations.footer.sections.products.links[2],
+          href: "/products/payroll-hr",
+        },
+        {
+          name: translations.footer.sections.products.links[3],
+          href: "/products/ecommerce-platform",
+        },
+        {
+          name: translations.footer.sections.products.links[4],
+          href: "/products/point-of-sale",
+        },
+        {
+          name: translations.footer.sections.products.links[5],
+          href: "/products/enterprise-solutions",
+        },
+      ],
     },
     {
       title: translations.footer.sections.industries.title,
       links: [
-        { name: translations.footer.sections.industries.links[0], href: "/industries/healthcare" },
-        { name: translations.footer.sections.industries.links[1], href: "/industries/education" },
-        { name: translations.footer.sections.industries.links[2], href: "/industries/retail-commerce" },
-        { name: translations.footer.sections.industries.links[3], href: "/industries/restaurants" },
-        { name: translations.footer.sections.industries.links[4], href: "/industries/manufacturing" },
-        { name: translations.footer.sections.industries.links[5], href: "/industries/professional-services" }
-      ]
+        {
+          name: translations.footer.sections.industries.links[0],
+          href: "/industries/healthcare",
+        },
+        {
+          name: translations.footer.sections.industries.links[1],
+          href: "/industries/education",
+        },
+        {
+          name: translations.footer.sections.industries.links[2],
+          href: "/industries/retail-commerce",
+        },
+        {
+          name: translations.footer.sections.industries.links[3],
+          href: "/industries/restaurants",
+        },
+        {
+          name: translations.footer.sections.industries.links[4],
+          href: "/industries/manufacturing",
+        },
+        {
+          name: translations.footer.sections.industries.links[5],
+          href: "/industries/professional-services",
+        },
+      ],
     },
     {
       title: translations.footer.sections.resources.title,
       links: [
-        { name: translations.footer.sections.resources.links[0], href: "/resources/documentation" },
-        { name: translations.footer.sections.resources.links[1], href: "/resources/api-reference" },
-        { name: translations.footer.sections.resources.links[2], href: "/resources/help-center" },
-        { name: translations.footer.sections.resources.links[3], href: "/resources/video-tutorials" },
-        { name: translations.footer.sections.resources.links[4], href: "/resources/webinars" },
-        { name: translations.footer.sections.resources.links[5], href: "/resources/case-studies" }
-      ]
+        {
+          name: translations.footer.sections.resources.links[0],
+          href: "/resources/documentation",
+        },
+        {
+          name: translations.footer.sections.resources.links[1],
+          href: "/resources/api-reference",
+        },
+        {
+          name: translations.footer.sections.resources.links[2],
+          href: "/resources/help-center",
+        },
+        {
+          name: translations.footer.sections.resources.links[3],
+          href: "/resources/video-tutorials",
+        },
+        {
+          name: translations.footer.sections.resources.links[4],
+          href: "/resources/webinars",
+        },
+        {
+          name: translations.footer.sections.resources.links[5],
+          href: "/resources/case-studies",
+        },
+      ],
     },
     {
       title: translations.footer.sections.company.title,
       links: [
         { name: translations.footer.sections.company.links[0], href: "/about" },
-        { name: translations.footer.sections.company.links[1], href: "/careers" },
-        { name: translations.footer.sections.company.links[2], href: "/press-kit" },
-        { name: translations.footer.sections.company.links[3], href: "/partners" },
-        { name: translations.footer.sections.company.links[4], href: "/security" },
-        { name: translations.footer.sections.company.links[5], href: "/privacy-policy" }
-      ]
-    }
+        {
+          name: translations.footer.sections.company.links[1],
+          href: "/careers",
+        },
+        {
+          name: translations.footer.sections.company.links[2],
+          href: "/press-kit",
+        },
+        {
+          name: translations.footer.sections.company.links[3],
+          href: "/partners",
+        },
+        {
+          name: translations.footer.sections.company.links[4],
+          href: "/security",
+        },
+        {
+          name: translations.footer.sections.company.links[5],
+          href: "/privacy-policy",
+        },
+      ],
+    },
   ];
 
   const socialLinks = [
@@ -71,11 +140,11 @@ const Footer: React.FC = () => {
     { name: "Twitter", icon: Twitter, href: "#" },
     { name: "LinkedIn", icon: Linkedin, href: "#" },
     { name: "Instagram", icon: Instagram, href: "#" },
-    { name: "YouTube", icon: Youtube, href: "#" }
+    { name: "YouTube", icon: Youtube, href: "#" },
   ];
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -87,7 +156,7 @@ const Footer: React.FC = () => {
             key={i}
             className="absolute w-1 h-1 bg-primary-yellow rounded-full"
             initial={{ opacity: 0 }}
-            animate={{ 
+            animate={{
               opacity: [0, 1, 0],
               scale: [0, 1, 0],
             }}
@@ -123,19 +192,19 @@ const Footer: React.FC = () => {
                 <p className="text-gray-400 mb-6 leading-relaxed">
                   {translations.footer.description}
                 </p>
-                
+
                 {/* Contact Info */}
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3 text-gray-400">
-                    <Mail className="w-4 h-4 text-primary-yellow" />
+                    <Mail className="w-4 h-4 text-[#ff9800]" />
                     <span>hello@taxgoglobal.com</span>
                   </div>
                   <div className="flex items-center space-x-3 text-gray-400">
-                    <Phone className="w-4 h-4 text-primary-yellow" />
+                    <Phone className="w-4 h-4 text-[#ff9800]" />
                     <span>+1 (555) 123-4567</span>
                   </div>
                   <div className="flex items-center space-x-3 text-gray-400">
-                    <MapPin className="w-4 h-4 text-primary-yellow" />
+                    <MapPin className="w-4 h-4 text-[#ff9800]" />
                     <span>123 Business Ave, Tech City</span>
                   </div>
                 </div>
@@ -152,7 +221,7 @@ const Footer: React.FC = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="lg:col-span-1"
               >
-                <h3 className="text-lg font-semibold mb-4 text-primary-yellow">
+                <h3 className="text-lg font-semibold mb-4 text-[#ff9800]">
                   {section.title}
                 </h3>
                 <ul className="space-y-3">
@@ -185,7 +254,9 @@ const Footer: React.FC = () => {
         >
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-2xl font-bold mb-2">{translations.footer.stayUpdated}</h3>
+              <h3 className="text-2xl font-bold mb-2">
+                {translations.footer.stayUpdated}
+              </h3>
               <p className="text-gray-400">
                 {translations.footer.newsletterText}
               </p>
@@ -199,9 +270,9 @@ const Footer: React.FC = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 bg-primary-yellow text-deep-black font-semibold rounded-lg hover:bg-yellow-400 transition-all duration-300"
+                className="px-6 py-3 bg-[#ff9800] text-deep-black font-semibold rounded-lg hover:bg-[#18a762] transition-all duration-300"
               >
-{translations.footer.subscribe}
+                {translations.footer.subscribe}
               </motion.button>
             </div>
           </div>
@@ -224,10 +295,10 @@ const Footer: React.FC = () => {
                   href={social.href}
                   whileHover={{ scale: 1.2, y: -2 }}
                   whileTap={{ scale: 0.9 }}
-                  className="w-10 h-10 bg-gray-800 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary-yellow hover:text-deep-black transition-all duration-300 group"
+                  className="w-10 h-10 bg-gray-800 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-[#ff9800] hover:text-deep-black transition-all duration-300 group"
                 >
-                  {React.createElement(social.icon, { 
-                    className: "w-5 h-5" 
+                  {React.createElement(social.icon, {
+                    className: "w-5 h-5",
                   })}
                 </motion.a>
               ))}
@@ -236,9 +307,20 @@ const Footer: React.FC = () => {
             {/* Copyright */}
             <div className="text-center md:text-left">
               <p className="text-gray-400 text-sm">
-                {translations.footer.copyright} | 
-                <Link to="/terms" className="hover:text-primary-yellow transition-colors ml-1">{translations.footer.terms}</Link> | 
-                <Link to="/privacy" className="hover:text-primary-yellow transition-colors ml-1">{translations.footer.privacy}</Link>
+                {translations.footer.copyright} |
+                <Link
+                  to="/terms"
+                  className="hover:text-[#ff9800] transition-colors ml-1"
+                >
+                  {translations.footer.terms}
+                </Link>{" "}
+                |
+                <Link
+                  to="/privacy"
+                  className="hover:text-[#ff9800] transition-colors ml-1"
+                >
+                  {translations.footer.privacy}
+                </Link>
               </p>
             </div>
 
@@ -247,7 +329,7 @@ const Footer: React.FC = () => {
               onClick={scrollToTop}
               whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.9 }}
-              className="w-10 h-10 bg-primary-yellow text-deep-black rounded-full flex items-center justify-center hover:bg-yellow-400 transition-all duration-300 shadow-lg"
+              className="w-10 h-10 bg-[#ff9800] text-deep-black rounded-full flex items-center justify-center hover:bg-[#18a762] transition-all duration-300 shadow-lg"
             >
               <ArrowUp className="w-5 h-5" />
             </motion.button>
@@ -263,12 +345,14 @@ const Footer: React.FC = () => {
           className="py-6 border-t border-gray-800"
         >
           <div className="flex flex-wrap justify-center items-center gap-8 text-gray-500 text-sm">
-            {translations.footer.trustBadges.map((badge: string, index: number) => (
-              <div key={index} className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-success-green rounded-full"></div>
-                <span>{badge}</span>
-              </div>
-            ))}
+            {translations.footer.trustBadges.map(
+              (badge: string, index: number) => (
+                <div key={index} className="flex items-center space-x-2">
+                  <div className="w-3 h-3 bg-[#18a762] rounded-full"></div>
+                  <span>{badge}</span>
+                </div>
+              )
+            )}
           </div>
         </motion.div>
       </div>
