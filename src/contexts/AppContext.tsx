@@ -71,91 +71,105 @@ const translations = {
           title: "Complete Accounting Suite",
           description:
             "Automated bookkeeping and financial tracking with AI-powered insights",
-          url: "/features/complete-accounting-suite",
-          //externalUrl: "https://www.youtube.com/",
+          // url: "/features/complete-accounting-suite",
+          externalUrl: "https://taxgoglobal.com/login",
           openInNewTab: true,
         },
         {
           title: "Smart Inventory Management",
           description: "Real-time stock monitoring with predictive analytics",
-          url: "/features/smart-inventory-management",
-          //externalUrl: "https://www.youtube.com/",
+          // url: "/features/smart-inventory-management",
+          externalUrl: "https://taxgoglobal.com/login",
           openInNewTab: true,
         },
         {
           title: "Payroll & HR Management",
           description:
             "Automated salary processing and employee management system",
-          url: "/features/payroll-hr-management",
-          //externalUrl: "https://www.youtube.com/",
+          // url: "/features/payroll-hr-management",
+          externalUrl: "https://taxgoglobal.com/login",
           openInNewTab: true,
         },
         {
           title: "Comprehensive Finance Tools",
           description:
             "Advanced budgeting, forecasting, and financial planning",
-          url: "/features/comprehensive-finance-tools",
-          //externalUrl: "https://www.youtube.com/",
+          // url: "/features/comprehensive-finance-tools",
+          externalUrl: "https://taxgoglobal.com/login",
           openInNewTab: true,
         },
         {
           title: "Purchase & Sales Management",
           description: "Automated procurement and sales tracking solutions",
-          url: "/features/purchase-sales-management",
-          //externalUrl: "https://www.youtube.com/",
+          // url: "/features/purchase-sales-management",
+          externalUrl: "https://taxgoglobal.com/login",
           openInNewTab: true,
         },
         {
           title: "Point of Sale System",
           description:
             "Integrated payment processing and transaction management",
-          url: "/features/point-of-sale-system",
-          //externalUrl: "https://www.youtube.com/",
+          // url: "/features/point-of-sale-system",
+          externalUrl: "https://retailxpress.net/",
           openInNewTab: true,
         },
         {
           title: "Executive Reporting App",
           description: "Real-time business insights and interactive dashboards",
-          url: "/features/executive-reporting-app",
-          //externalUrl: "https://www.youtube.com/",
+          // url: "/features/executive-reporting-app",
+          externalUrl: "https://retailxpress.net/",
           openInNewTab: true,
         },
         {
           title: "Order Taking App",
           description: "Streamlined customer order processing and management",
-          url: "/features/order-taking-app",
-          //externalUrl: "https://www.youtube.com/",
+          // url: "/features/order-taking-app",
+          externalUrl: "https://retailxpress.net/",
           openInNewTab: true,
         },
         {
           title: "Customer & Chef Display Systems",
           description: "Seamless kitchen and service coordination platforms",
-          url: "/features/customer-chef-display-systems",
-          //externalUrl: "https://www.youtube.com/",
+          // url: "/features/customer-chef-display-systems",
+          externalUrl: "https://retailxpress.net/",
           openInNewTab: true,
         },
         {
           title: "Smart Menu-Based Ordering",
           description: "AI-powered recommendations and customization features",
-          url: "/features/smart-menu-based-ordering",
-          //externalUrl: "https://www.youtube.com/",
+          // url: "/features/smart-menu-based-ordering",
+          externalUrl: "https://retailxpress.net/",
           openInNewTab: true,
         },
         {
           title: "Ready-Made Ecommerce Platform",
           description:
             "Fully integrated online store solution with advanced features",
-          url: "/features/ready-made-ecommerce-platform",
-          //externalUrl: "https://www.youtube.com/",
+          // url: "/features/ready-made-ecommerce-platform",
+          externalUrl: "https://nalakathfruits.com/",
           openInNewTab: true,
         },
         {
           title: "Complete Marketplace Software",
           description:
             "Multi-channel selling with centralized inventory control",
-          url: "/features/complete-marketplace-software",
-          //externalUrl: "https://www.youtube.com/",
+          // url: "/features/complete-marketplace-software",
+          externalUrl: "https://nalakathfruits.com/",
           openInNewTab: true,
+        },
+        {
+          title: "Hospital Management System",
+          description:
+            "Complete hospital administration with patients, billing, pharmacy, labs, and inventory integrated with accounting",
+            externalUrl: "https://mind-dev.bairuhatech.com/",
+            openInNewTab: true,
+          },
+        {
+          title: "Learning Management System",
+          description:
+            "End-to-end LMS for courses, assessments, student management, and administration with integrated finance",
+            externalUrl: "https://lms.bairuhatech.com/dashboard",
+            openInNewTab: true,
         },
       ],
     },
@@ -329,50 +343,100 @@ const translations = {
           title: "مجموعة المحاسبة الكاملة",
           description:
             "مسك الدفاتر الآلي وتتبع مالي مع رؤى مدعومة بالذكاء الاصطناعي",
+          // url: "/features/complete-accounting-suite",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "إدارة المخزون الذكية",
           description: "مراقبة المخزون في الوقت الفعلي مع التحليلات التنبؤية",
+          // url: "/features/smart-inventory-management",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "إدارة الرواتب والموارد البشرية",
           description: "معالجة الرواتب الآلية ونظام إدارة الموظفين",
+          // url: "/features/payroll-hr-management",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "أدوات التمويل الشاملة",
           description: "وضع الميزانية المتقدم والتنبؤ والتخطيط المالي",
+          // url: "/features/comprehensive-finance-tools",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "إدارة المشتريات والمبيعات",
           description: "حلول المشتريات الآلية وتتبع المبيعات",
+          // url: "/features/purchase-sales-management",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "نظام نقطة البيع",
           description: "معالجة الدفع المتكاملة وإدارة المعاملات",
+          // url: "/features/point-of-sale-system",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "تطبيق التقارير التنفيذية",
           description: "رؤى الأعمال في الوقت الفعلي ولوحات المعلومات التفاعلية",
+          // url: "/features/executive-reporting-app",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "تطبيق أخذ الطلبات",
           description: "معالجة طلبات العملاء المبسطة والإدارة",
+          // url: "/features/order-taking-app",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "أنظمة عرض العملاء والطهاة",
           description: "منصات تنسيق المطبخ والخدمة السلسة",
+          // url: "/features/customer-chef-display-systems",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "الطلب الذكي القائم على القائمة",
           description: "توصيات مدعومة بالذكاء الاصطناعي وميزات التخصيص",
+          // url: "/features/smart-menu-based-ordering",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "منصة التجارة الإلكترونية الجاهزة",
           description: "حل متجر عبر الإنترنت متكامل بالكامل مع ميزات متقدمة",
+          // url: "/features/ready-made-ecommerce-platform",
+          externalUrl: "https://nalakathfruits.com/",
+          openInNewTab: true,
         },
         {
           title: "برمجيات السوق الكاملة",
           description: "البيع متعدد القنوات مع التحكم المركزي في المخزون",
+          // url: "/features/complete-marketplace-software",
+          externalUrl: "https://nalakathfruits.com/",
+          openInNewTab: true,
+        },
+        {
+          title: "نظام إدارة المستشفيات",
+          description:
+            "حل إدارة الرعاية الصحية والإدارة المالية الكامل المصمم للمرافق الطبية الحديثة.",
+          externalUrl: "https://mind-dev.bairuhatech.com/",
+          openInNewTab: true,
+        },
+        {
+          title: "نظام إدارة التعلم",
+          description:
+            "منصة تعليمية شاملة مع المحاسبة المتكاملة والإدارة للمؤسسات التعليمية.",
+          externalUrl: "https://lms.bairuhatech.com/dashboard",
+          openInNewTab: true,
         },
       ],
     },
@@ -544,52 +608,93 @@ const translations = {
         {
           title: "Ngwa akụntụ zuru oke",
           description: "Njikwa ego na nyocha akụntụ nwere AI",
+          // url: "/features/complete-accounting-suite",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "Njikwa ngwa ahịa nwere ọgụgụ isi",
           description: "Nlekọta ngwa ahịa na mgbe oge yana amụma analytics",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "Njikwa ụgwọ ọrụ na HR",
           description:
             "Sistemụ nhazi ụgwọ na njikwa ndị ọrụ na-arụ ọrụ naanị ya",
+
+
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "Ngwá ọrụ ego zuru oke",
           description: "Nhazi ego dị elu, amụma na nhazi atụmatụ ego",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "Njikwa azụmahịa na ire ere",
           description: "Ngwọta azụmahịa na-arụ ọrụ naanị ya na nlekọta ire ere",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "Sistemụ ebe ire ere",
           description: "Nhazi ịkwụ ụgwọ jikọtara ọnụ na njikwa azụmahịa",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "Ngwa mkpesa ndị isi",
           description: "Nghọta azụmahịa na mgbe oge na dashboard mmekọrịta",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "Ngwa iwere iwu",
           description: "Nhazi iwu ndị ahịa dị mfe na njikwa",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "Sistemụ ngosi ndị ahịa na ndị osi nri",
           description: "Ikpo okwu nkwekọrịta kichin na ọrụ dị mfe",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "Iwu nwere ọgụgụ isi dabere na menu",
           description: "Nkwanye ugwu AI na njiri mara nhazi",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "Ikpo okwu azụmahịa elektrọnik dị njikere",
           description:
             "Ngwọta ụlọ ahịa n'ịntanetị jikọtara ọnụ nwere njiri mara dị elu",
+          externalUrl: "https://nalakathfruits.com/",
+          openInNewTab: true,
         },
         {
           title: "Ngwanrọ ahịa zuru oke",
           description: "Ire ere ọtụtụ ụzọ na njikwa ngwa ahịa etiti",
+          externalUrl: "https://nalakathfruits.com/",
+          openInNewTab: true,
+        },
+        {
+          title: "Sistemụ njikwa ụlọ ọgwụ",
+          description:
+            "Ngwọta nlekọta ahụike na njikwa ego zuru oke emebere maka ụlọ ọrụ ahụike ọgbara ọhụrụ.",
+          externalUrl: "https://mind-dev.bairuhatech.com/",
+          openInNewTab: true,
+        },
+        {
+          title: "Sistemụ njikwa mmụta",
+          description:
+            "Ikpo okwu agụmakwụkwọ zuru oke nwere akụntụ jikọtara ọnụ na nchịkwa maka ụlọ akwụkwọ.",
+          externalUrl: "https://lms.bairuhatech.com/dashboard",
+          openInNewTab: true,
         },
       ],
     },
@@ -764,61 +869,111 @@ const translations = {
           title: "Suite Completa de Contabilidad",
           description:
             "Contabilidad automatizada y seguimiento financiero con insights impulsados por IA",
+          // url: "/features/complete-accounting-suite",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "Gestión Inteligente de Inventario",
           description:
             "Monitoreo de stock en tiempo real con análisis predictivo",
+          // url: "/features/smart-inventory-management",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "Gestión de Nómina y RRHH",
           description:
             "Sistema automatizado de procesamiento de salarios y gestión de empleados",
+          // url: "/features/payroll-hr-management",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "Herramientas Financieras Integrales",
           description:
             "Presupuestación avanzada, pronósticos y planificación financiera",
+          // url: "/features/comprehensive-finance-tools",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "Gestión de Compras y Ventas",
           description:
             "Soluciones automatizadas de adquisiciones y seguimiento de ventas",
+          // url: "/features/purchase-sales-management",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "Sistema de Punto de Venta",
           description:
             "Procesamiento de pagos integrado y gestión de transacciones",
+          // url: "/features/point-of-sale-system",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "App de Reportes Ejecutivos",
           description:
             "Insights empresariales en tiempo real y dashboards interactivos",
+          // url: "/features/executive-reporting-app",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "App de Toma de Pedidos",
           description:
             "Procesamiento simplificado de pedidos de clientes y gestión",
+          // url: "/features/order-taking-app",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "Sistemas de Visualización para Clientes y Chefs",
           description:
             "Plataformas de coordinación perfecta entre cocina y servicio",
+          // url: "/features/customer-chef-display-systems",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "Pedidos Inteligentes Basados en Menú",
           description:
             "Recomendaciones impulsadas por IA y características de personalización",
+          // url: "/features/smart-menu-based-ordering",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "Plataforma de Comercio Electrónico Lista",
           description:
             "Solución de tienda online completamente integrada con características avanzadas",
+          // url: "/features/ready-made-ecommerce-platform",
+          externalUrl: "https://nalakathfruits.com/",
+          openInNewTab: true,
         },
         {
           title: "Software Completo de Marketplace",
           description:
             "Venta multicanal con control centralizado de inventario",
+          // url: "/features/complete-marketplace-software",
+          externalUrl: "https://nalakathfruits.com/",
+          openInNewTab: true,
+        },
+        {
+          title: "Sistema de Gestión Hospitalaria",
+          description:
+            "Solución completa de administración sanitaria y gestión financiera diseñada para instalaciones médicas modernas.",
+          externalUrl: "https://mind-dev.bairuhatech.com/",
+          openInNewTab: true,
+        },
+        {
+          title: "Sistema de Gestión de Aprendizaje",
+          description:
+            "Plataforma educativa integral con contabilidad integrada y administración para instituciones educativas.",
+          externalUrl: "https://lms.bairuhatech.com/dashboard",
+          openInNewTab: true,
         },
       ],
     },
@@ -993,59 +1148,109 @@ const translations = {
           title: "Suite Comptable Complète",
           description:
             "Tenue de livres automatisée et suivi financier avec insights alimentés par IA",
+          // url: "/features/complete-accounting-suite",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "Gestion Intelligente des Stocks",
           description:
             "Surveillance des stocks en temps réel avec analyses prédictives",
+          // url: "/features/smart-inventory-management",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "Gestion de la Paie et RH",
           description:
             "Système automatisé de traitement des salaires et de gestion des employés",
+          // url: "/features/payroll-hr-management",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "Outils Financiers Complets",
           description:
             "Budgétisation avancée, prévisions et planification financière",
+          // url: "/features/comprehensive-finance-tools",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "Gestion des Achats et Ventes",
           description:
             "Solutions automatisées d'approvisionnement et de suivi des ventes",
+          // url: "/features/purchase-sales-management",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "Système de Point de Vente",
           description:
             "Traitement des paiements intégré et gestion des transactions",
+          // url: "/features/point-of-sale-system",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "App de Rapports Exécutifs",
           description:
             "Insights commerciaux en temps réel et tableaux de bord interactifs",
+          // url: "/features/executive-reporting-app",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "App de Prise de Commandes",
           description: "Traitement simplifié des commandes clients et gestion",
+          // url: "/features/order-taking-app",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "Systèmes d'Affichage Client et Chef",
           description:
             "Plateformes de coordination fluide entre cuisine et service",
+          // url: "/features/customer-chef-display-systems",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "Commandes Intelligentes Basées sur Menu",
           description:
             "Recommandations alimentées par IA et fonctionnalités de personnalisation",
+          // url: "/features/smart-menu-based-ordering",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "Plateforme E-commerce Prête à l'Emploi",
           description:
             "Solution de boutique en ligne entièrement intégrée avec fonctionnalités avancées",
+          // url: "/features/ready-made-ecommerce-platform",
+          externalUrl: "https://nalakathfruits.com/",
+          openInNewTab: true,
         },
         {
           title: "Logiciel de Marketplace Complet",
           description: "Vente multicanal avec contrôle centralisé des stocks",
+          // url: "/features/complete-marketplace-software",
+          externalUrl: "https://nalakathfruits.com/",
+          openInNewTab: true,
+        },
+        {
+          title: "Système de Gestion Hospitalière",
+          description:
+            "Solution complète d'administration des soins de santé et de gestion financière conçue pour les installations médicales modernes.",
+          externalUrl: "https://mind-dev.bairuhatech.com/",
+          openInNewTab: true,
+        },
+        {
+          title: "Système de Gestion de l'Apprentissage",
+          description:
+            "Plateforme éducative complète avec comptabilité intégrée et administration pour les institutions éducatives.",
+          externalUrl: "https://lms.bairuhatech.com/dashboard",
+          openInNewTab: true,
         },
       ],
     },
@@ -1220,55 +1425,105 @@ const translations = {
           title: "Komplette Buchhaltungssuite",
           description:
             "Automatisierte Buchführung und Finanzverfolgung mit KI-gestützten Einblicken",
+          // url: "/features/complete-accounting-suite",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "Intelligente Lagerverwaltung",
           description: "Echtzeit-Bestandsüberwachung mit prädiktiven Analysen",
+          // url: "/features/smart-inventory-management",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "Gehalts- und HR-Management",
           description:
             "Automatisiertes Gehaltsabrechnungssystem und Mitarbeiterverwaltung",
+          // url: "/features/payroll-hr-management",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "Umfassende Finanztools",
           description: "Erweiterte Budgetierung, Prognosen und Finanzplanung",
+          // url: "/features/comprehensive-finance-tools",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "Einkaufs- und Vertriebsmanagement",
           description:
             "Automatisierte Beschaffungs- und Vertriebsverfolgungslösungen",
+          // url: "/features/purchase-sales-management",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "Kassensystem",
           description:
             "Integrierte Zahlungsabwicklung und Transaktionsmanagement",
+          // url: "/features/point-of-sale-system",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "Executive Reporting App",
           description: "Echtzeit-Geschäftseinblicke und interaktive Dashboards",
+          // url: "/features/executive-reporting-app",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "Bestellannahme-App",
           description: "Optimierte Kundenbestellungsabwicklung und -verwaltung",
+          // url: "/features/order-taking-app",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "Kunden- und Küchen-Display-Systeme",
           description: "Nahtlose Küchen- und Service-Koordinationsplattformen",
+          // url: "/features/customer-chef-display-systems",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "Intelligente menübasierte Bestellung",
           description: "KI-gestützte Empfehlungen und Anpassungsfunktionen",
+          // url: "/features/smart-menu-based-ordering",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "Fertige E-Commerce-Plattform",
           description:
             "Vollständig integrierte Online-Shop-Lösung mit erweiterten Funktionen",
+          // url: "/features/ready-made-ecommerce-platform",
+          externalUrl: "https://nalakathfruits.com/",
+          openInNewTab: true,
         },
         {
           title: "Komplette Marktplatz-Software",
           description:
             "Multi-Channel-Verkauf mit zentralisierter Bestandskontrolle",
+          // url: "/features/complete-marketplace-software",
+          externalUrl: "https://nalakathfruits.com/",
+          openInNewTab: true,
+        },
+        {
+          title: "Krankenhaus-Management-System",
+          description:
+            "Komplette Gesundheitsverwaltungs- und Finanzmanagement-Lösung für moderne medizinische Einrichtungen.",
+          externalUrl: "https://mind-dev.bairuhatech.com/",
+          openInNewTab: true,
+        },
+        {
+          title: "Lernmanagementsystem",
+          description:
+            "Umfassende Bildungsplattform mit integrierter Buchhaltung und Verwaltung für Bildungseinrichtungen.",
+          externalUrl: "https://lms.bairuhatech.com/dashboard",
+          openInNewTab: true,
         },
       ],
     },
@@ -1441,50 +1696,98 @@ const translations = {
         {
           title: "完整会计套件",
           description: "自动化簿记和财务跟踪，配备AI驱动的洞察",
+          // url: "/features/complete-accounting-suite",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "智能库存管理",
           description: "实时库存监控和预测分析",
+          // url: "/features/smart-inventory-management",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "工资和人力资源管理",
           description: "自动化薪资处理和员工管理系统",
+          // url: "/features/payroll-hr-management",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "综合财务工具",
           description: "高级预算、预测和财务规划",
+          // url: "/features/comprehensive-finance-tools",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "采购和销售管理",
           description: "自动化采购和销售跟踪解决方案",
+          // url: "/features/purchase-sales-management",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "销售点系统",
           description: "集成支付处理和交易管理",
+          // url: "/features/point-of-sale-system",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "执行报告应用",
           description: "实时业务洞察和交互式仪表板",
+          // url: "/features/executive-reporting-app",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "订单处理应用",
           description: "简化的客户订单处理和管理",
+          // url: "/features/order-taking-app",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "客户和厨师显示系统",
           description: "无缝厨房和服务协调平台",
+          // url: "/features/customer-chef-display-systems",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "智能菜单订购",
           description: "AI驱动的推荐和定制功能",
+          // url: "/features/smart-menu-based-ordering",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "现成的电子商务平台",
           description: "具有高级功能的完全集成在线商店解决方案",
+          // url: "/features/ready-made-ecommerce-platform",
+          externalUrl: "https://nalakathfruits.com/",
+          openInNewTab: true,
         },
         {
           title: "完整的市场软件",
           description: "多渠道销售和集中库存控制",
+          // url: "/features/complete-marketplace-software",
+          externalUrl: "https://nalakathfruits.com/",
+          openInNewTab: true,
+        },
+        {
+          title: "医院管理系统",
+          description: "为现代医疗设施设计的完整医疗管理和财务管理解决方案。",
+          externalUrl: "https://mind-dev.bairuhatech.com/",
+          openInNewTab: true,
+        },
+        {
+          title: "学习管理系统",
+          description: "为教育机构提供集成会计和管理的综合教育平台。",
+          externalUrl: "https://lms.bairuhatech.com/dashboard",
+          openInNewTab: true,
         },
       ],
     },
@@ -1646,52 +1949,102 @@ const translations = {
         {
           title: "完全会計スイート",
           description: "AI駆動のインサイトによる自動簿記と財務追跡",
+          // url: "/features/complete-accounting-suite",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "スマート在庫管理",
           description: "予測分析によるリアルタイム在庫監視",
+          // url: "/features/smart-inventory-management",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "給与・人事管理",
           description: "自動給与処理と従業員管理システム",
+          // url: "/features/payroll-hr-management",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "包括的財務ツール",
           description: "高度な予算編成、予測、財務計画",
+          // url: "/features/comprehensive-finance-tools",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "購買・販売管理",
           description: "自動調達と販売追跡ソリューション",
+          // url: "/features/purchase-sales-management",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "POSシステム",
           description: "統合決済処理と取引管理",
+          // url: "/features/point-of-sale-system",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "エグゼクティブレポートアプリ",
           description:
             "リアルタイムビジネスインサイトとインタラクティブダッシュボード",
+          // url: "/features/executive-reporting-app",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "注文取得アプリ",
           description: "合理化された顧客注文処理と管理",
+          // url: "/features/order-taking-app",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "顧客・シェフディスプレイシステム",
           description: "シームレスなキッチンとサービス調整プラットフォーム",
+          // url: "/features/customer-chef-display-systems",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "スマートメニューベース注文",
           description: "AI駆動の推奨とカスタマイゼーション機能",
+          // url: "/features/smart-menu-based-ordering",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "レディメイドeコマースプラットフォーム",
           description:
             "高度な機能を備えた完全統合オンラインストアソリューション",
+          // url: "/features/ready-made-ecommerce-platform",
+          externalUrl: "https://nalakathfruits.com/",
+          openInNewTab: true,
         },
         {
           title: "完全マーケットプレイスソフトウェア",
           description: "集中在庫制御によるマルチチャネル販売",
+          // url: "/features/complete-marketplace-software",
+          externalUrl: "https://nalakathfruits.com/",
+          openInNewTab: true,
+        },
+        {
+          title: "病院管理システム",
+          description:
+            "現代医療施設向けに設計された完全なヘルスケア管理と財務管理ソリューション。",
+          externalUrl: "https://mind-dev.bairuhatech.com/",
+          openInNewTab: true,
+        },
+        {
+          title: "学習管理システム",
+          description:
+            "教育機関向けの統合会計と管理を備えた包括的教育プラットフォーム。",
+          externalUrl: "https://lms.bairuhatech.com/dashboard",
+          openInNewTab: true,
         },
       ],
     },
@@ -1917,6 +2270,20 @@ const translations = {
           description:
             "Vendas multicanal com controle centralizado de inventário",
         },
+        {
+          title: "Sistema de Gestão Hospitalar",
+          description:
+            "Solução completa de administração de saúde e gestão financeira projetada para instalações médicas modernas.",
+          externalUrl: "https://mind-dev.bairuhatech.com/",
+          openInNewTab: true,
+        },
+        {
+          title: "Sistema de Gestão de Aprendizagem",
+          description:
+            "Plataforma educacional abrangente com contabilidade integrada e administração para instituições educacionais.",
+          externalUrl: "https://lms.bairuhatech.com/dashboard",
+          openInNewTab: true,
+        },
       ],
     },
     industries: {
@@ -2090,58 +2457,108 @@ const translations = {
           title: "Полный бухгалтерский пакет",
           description:
             "Автоматизированная бухгалтерия и финансовое отслеживание с аналитикой на базе ИИ",
+          // url: "/features/complete-accounting-suite",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "Умное управление складом",
           description:
             "Мониторинг запасов в реальном времени с прогнозной аналитикой",
+          // url: "/features/smart-inventory-management",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "Управление зарплатой и HR",
           description:
             "Автоматизированная система расчета зарплаты и управления сотрудниками",
+          // url: "/features/payroll-hr-management",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "Комплексные финансовые инструменты",
           description:
             "Расширенное бюджетирование, прогнозирование и финансовое планирование",
+          // url: "/features/comprehensive-finance-tools",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "Управление закупками и продажами",
           description:
             "Автоматизированные решения для закупок и отслеживания продаж",
+          // url: "/features/purchase-sales-management",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "Система торговых точек",
           description:
             "Интегрированная обработка платежей и управление транзакциями",
+          // url: "/features/point-of-sale-system",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "Приложение исполнительной отчетности",
           description:
             "Бизнес-аналитика в реальном времени и интерактивные панели",
+          // url: "/features/executive-reporting-app",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "Приложение приема заказов",
           description: "Упрощенная обработка клиентских заказов и управление",
+          // url: "/features/order-taking-app",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "Системы отображения для клиентов и поваров",
           description: "Бесшовные платформы координации кухни и обслуживания",
+          // url: "/features/customer-chef-display-systems",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "Умные заказы на основе меню",
           description: "Рекомендации на базе ИИ и функции кастомизации",
+          // url: "/features/smart-menu-based-ordering",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "Готовая платформа электронной коммерции",
           description:
             "Полностью интегрированное решение интернет-магазина с расширенными функциями",
+          // url: "/features/ready-made-ecommerce-platform",
+          externalUrl: "https://nalakathfruits.com/",
+          openInNewTab: true,
         },
         {
           title: "Полное программное обеспечение маркетплейса",
           description:
             "Многоканальные продажи с централизованным контролем запасов",
+          // url: "/features/complete-marketplace-software",
+          externalUrl: "https://nalakathfruits.com/",
+          openInNewTab: true,
+        },
+        {
+          title: "Система управления больницей",
+          description:
+            "Полное решение для администрирования здравоохранения и финансового управления, разработанное для современных медицинских учреждений.",
+          externalUrl: "https://mind-dev.bairuhatech.com/",
+          openInNewTab: true,
+        },
+        {
+          title: "Система управления обучением",
+          description:
+            "Комплексная образовательная платформа с интегрированной бухгалтерией и администрированием для образовательных учреждений.",
+          externalUrl: "https://lms.bairuhatech.com/dashboard",
+          openInNewTab: true,
         },
       ],
     },
@@ -2316,50 +2733,100 @@ const translations = {
           title: "संपूर्ण लेखांकन सूट",
           description:
             "AI-संचालित अंतर्दृष्टि के साथ स्वचालित पुस्तक रखरखाव और वित्तीय ट्रैकिंग",
+          // url: "/features/complete-accounting-suite",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "स्मार्ट इन्वेंटरी प्रबंधन",
           description: "भविष्यवाणी विश्लेषण के साथ रीयल-टाइम स्टॉक मॉनिटरिंग",
+          // url: "/features/smart-inventory-management",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "पेरोल और HR प्रबंधन",
           description: "स्वचालित वेतन प्रसंस्करण और कर्मचारी प्रबंधन प्रणाली",
+          // url: "/features/payroll-hr-management",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "व्यापक वित्तीय उपकरण",
           description: "उन्नत बजट, पूर्वानुमान और वित्तीय योजना",
+          // url: "/features/comprehensive-finance-tools",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "खरीद और बिक्री प्रबंधन",
           description: "स्वचालित खरीद और बिक्री ट्रैकिंग समाधान",
+          // url: "/features/purchase-sales-management",
+          externalUrl: "https://taxgoglobal.com/login",
+          openInNewTab: true,
         },
         {
           title: "पॉइंट ऑफ सेल सिस्टम",
           description: "एकीकृत भुगतान प्रसंस्करण और लेनदेन प्रबंधन",
+          // url: "/features/point-of-sale-system",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "कार्यकारी रिपोर्टिंग ऐप",
           description: "रीयल-टाइम व्यवसाय अंतर्दृष्टि और इंटरैक्टिव डैशबोर्ड",
+          // url: "/features/executive-reporting-app",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "ऑर्डर लेने वाला ऐप",
           description: "सुव्यवस्थित ग्राहक ऑर्डर प्रसंस्करण और प्रबंधन",
+          // url: "/features/order-taking-app",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "ग्राहक और शेफ डिस्प्ले सिस्टम",
           description: "निर्बाध रसोई और सेवा समन्वय प्लेटफॉर्म",
+          // url: "/features/customer-chef-display-systems",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "स्मार्ट मेनू-आधारित ऑर्डरिंग",
           description: "AI-संचालित सिफारिशें और अनुकूलन सुविधाएं",
+          // url: "/features/smart-menu-based-ordering",
+          externalUrl: "https://retailxpress.net/",
+          openInNewTab: true,
         },
         {
           title: "तैयार ई-कॉमर्स प्लेटफॉर्म",
           description: "उन्नत सुविधाओं के साथ पूर्ण एकीकृत ऑनलाइन स्टोर समाधान",
+          // url: "/features/ready-made-ecommerce-platform",
+          externalUrl: "https://nalakathfruits.com/",
+          openInNewTab: true,
         },
         {
           title: "संपूर्ण मार्केटप्लेस सॉफ़्टवेयर",
           description: "केंद्रीकृत इन्वेंटरी नियंत्रण के साथ मल्टी-चैनल बिक्री",
+          // url: "/features/complete-marketplace-software",
+          externalUrl: "https://nalakathfruits.com/",
+          openInNewTab: true,
+        },
+        {
+          title: "अस्पताल प्रबंधन प्रणाली",
+          description:
+            "आधुनिक चिकित्सा सुविधाओं के लिए डिज़ाइन किया गया संपूर्ण स्वास्थ्य सेवा प्रशासन और वित्तीय प्रबंधन समाधान।",
+          externalUrl: "https://mind-dev.bairuhatech.com/",
+          openInNewTab: true,
+        },
+        {
+          title: "शिक्षा प्रबंधन प्रणाली",
+          description:
+            "शैक्षिक संस्थानों के लिए एकीकृत लेखांकन और प्रशासन के साथ व्यापक शैक्षिक प्लेटफॉर्म।",
+          externalUrl: "https://lms.bairuhatech.com/dashboard",
+          openInNewTab: true,
         },
       ],
     },

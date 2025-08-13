@@ -14,6 +14,8 @@ import {
   Globe,
   Store,
   Database,
+  Stethoscope,
+  GraduationCap,
   ExternalLink,
 } from "lucide-react";
 import { useApp } from "../contexts/AppContext";
@@ -61,6 +63,8 @@ const Features: React.FC<FeaturesProps> = ({
     Globe,
     Store,
     Database,
+    Stethoscope,
+    GraduationCap,
   ];
 
   const featureColors = [
@@ -76,6 +80,8 @@ const Features: React.FC<FeaturesProps> = ({
     "from-cyan-500 to-cyan-600",
     "from-emerald-500 to-emerald-600",
     "from-violet-500 to-violet-600",
+    "from-rose-500 to-rose-600",
+    "from-sky-500 to-sky-600",
   ];
 
   // Generate features data
@@ -156,7 +162,7 @@ const Features: React.FC<FeaturesProps> = ({
     <div
       className={`glass-effect p-6 rounded-2xl h-full transition-all duration-300 group-hover:shadow-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 ${
         clickable ? "cursor-pointer" : ""
-      }`}
+      } flex flex-col`}
     >
       {/* Icon with Gradient Background */}
       <div
@@ -177,7 +183,7 @@ const Features: React.FC<FeaturesProps> = ({
 
       {/* External Link Icon - only show if clickable */}
       {clickable && (
-        <div className="flex items-center justify-end">
+        <div className="flex items-center justify-end mt-auto">
           <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-[#ff9800] transition-colors duration-300" />
         </div>
       )}
@@ -263,7 +269,7 @@ const Features: React.FC<FeaturesProps> = ({
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 auto-rows-fr"
         >
           {features.map((feature: any, index: number) => (
             <motion.div
@@ -274,7 +280,7 @@ const Features: React.FC<FeaturesProps> = ({
                 y: -10,
                 transition: { duration: 0.3 },
               }}
-              className="group relative"
+              className="group relative h-full"
             >
               {clickable && feature.url && !onFeatureClick ? (
                 // Render as Link if URL is provided and no custom click handler
